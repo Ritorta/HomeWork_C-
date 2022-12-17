@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\SlyFox\\Downloads\\Обучение по программированию\\Ai\\C# Base\\Home Work\\HomeWorkC-\\Task_004\\Task_004.csproj",
+      "projectUniqueName": "F:\\SlyFox\\Downloads\\Обучение по программированию\\Ai\\C# Base\\Home Work\\HomeWork_C_Sharp\\Work №1\\Task_004\\Task_004.csproj",
       "projectName": "Task_004",
-      "projectPath": "F:\\SlyFox\\Downloads\\Обучение по программированию\\Ai\\C# Base\\Home Work\\HomeWorkC-\\Task_004\\Task_004.csproj",
+      "projectPath": "F:\\SlyFox\\Downloads\\Обучение по программированию\\Ai\\C# Base\\Home Work\\HomeWork_C_Sharp\\Work №1\\Task_004\\Task_004.csproj",
       "packagesPath": "C:\\Users\\SlyFox\\.nuget\\packages\\",
-      "outputPath": "F:\\SlyFox\\Downloads\\Обучение по программированию\\Ai\\C# Base\\Home Work\\HomeWorkC-\\Task_004\\obj\\",
+      "outputPath": "F:\\SlyFox\\Downloads\\Обучение по программированию\\Ai\\C# Base\\Home Work\\HomeWork_C_Sharp\\Work №1\\Task_004\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SlyFox\\AppData\\Roaming\\NuGet\\NuGet.Config",
