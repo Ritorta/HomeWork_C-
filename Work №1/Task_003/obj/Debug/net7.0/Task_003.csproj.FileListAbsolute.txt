@@ -1,0 +1,30 @@
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\bin\Debug\net7.0\Task_003.exe
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\bin\Debug\net7.0\Task_003.deps.json
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\bin\Debug\net7.0\Task_003.runtimeconfig.json
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\bin\Debug\net7.0\Task_003.dll
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\bin\Debug\net7.0\Task_003.pdb
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\obj\Debug\net7.0\Task_003.csproj.AssemblyReference.cache
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\obj\Debug\net7.0\Task_003.GeneratedMSBuildEditorConfig.editorconfig
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\obj\Debug\net7.0\Task_003.AssemblyInfoInputs.cache
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\obj\Debug\net7.0\Task_003.AssemblyInfo.cs
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\obj\Debug\net7.0\Task_003.csproj.CoreCompileInputs.cache
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\obj\Debug\net7.0\Task_003.dll
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\obj\Debug\net7.0\refint\Task_003.dll
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\obj\Debug\net7.0\Task_003.pdb
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\obj\Debug\net7.0\Task_003.genruntimeconfig.cache
+F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_003\obj\Debug\net7.0\ref\Task_003.dll
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\bin\Debug\net7.0\Task_003.exe
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\bin\Debug\net7.0\Task_003.deps.json
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\bin\Debug\net7.0\Task_003.runtimeconfig.json
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\bin\Debug\net7.0\Task_003.dll
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\bin\Debug\net7.0\Task_003.pdb
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\obj\Debug\net7.0\Task_003.csproj.AssemblyReference.cache
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\obj\Debug\net7.0\Task_003.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\obj\Debug\net7.0\Task_003.AssemblyInfoInputs.cache
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\obj\Debug\net7.0\Task_003.AssemblyInfo.cs
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\obj\Debug\net7.0\Task_003.csproj.CoreCompileInputs.cache
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\obj\Debug\net7.0\Task_003.dll
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\obj\Debug\net7.0\refint\Task_003.dll
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\obj\Debug\net7.0\Task_003.pdb
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\obj\Debug\net7.0\Task_003.genruntimeconfig.cache
+C:\Users\Esdesu\Documents\Hub\Home Work\3 -Знакомство с C#\Work №1\Task_003\obj\Debug\net7.0\ref\Task_003.dll
