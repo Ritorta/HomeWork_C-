@@ -73,7 +73,8 @@ for (int count = 2; count <= numb; count++)
       Console.Write(count);
          if (count <= numb - 1 ) 
          // Я потратил кучу времени, чтобы написать это с точкой, прям целый день,
-         // самое главное, я додумался до этого НО! только через гугл я смог понять, что нехватало "-1", хех...
+         // самое главное, я додумался до этого НО,
+         // только через гугл я смог понять, что нехватало "-1", хех...
          {
             Console.Write(", ");
          }
@@ -82,8 +83,6 @@ for (int count = 2; count <= numb; count++)
     Console.Write(".");
         
 // Пятый вариант: (Здесь я пытался вписать точку с оператором while)
-
-*/
 
 Console.Write("Enter the Number: ");
 int numb = Convert.ToInt32(Console.ReadLine());
@@ -96,13 +95,38 @@ while (current <= numb)
 {
    if (current %2 == 0)
       Console.Write(current);
-         if (current <= numb)
-      {
+         else if (current <= numb) 
+         // Здесь постоянно будлировались запятые, решение было в том, 
+         // чтобы к if добавить else, не особо понял почему это решило проблему но оно решило,
+         // достигнуто методом проб и ошибок.
+         {
          Console.Write(", ");
-      }
+         }
       
    current = current + 1;
 }
 
 Console.Write(".");
 
+*/
+
+// Шестой вариант: (Здесь я тоже вписал точку, данный вариант нахождения чётных мне нравиться больше, т.к можно найти и отрицательные значения)
+
+Console.Write("Enter the Start Number: ");
+int numb = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter the End Number: ");
+int numb2 = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Чётные числа из диапазона: ");
+
+for (int count = numb; count <= numb2; count++)
+
+    if (count %2 == 0)
+    {
+      Console.Write(count);
+         if (count <= numb2 - 1 )
+            {
+               Console.Write(", ");
+            }
+    }
+Console.Write(".");
