@@ -1,13 +1,14 @@
 ﻿/* 
-Task №1:
+Task №2:
 Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
 645 -> 5
 78 -> третьей цифры нет
 32679 -> 6
 
-*/
 
+// Вариант №1
+// Решение так сказать в лоб без изысков.
 int NumFree(int numb1)
 {
     int Free = numb1 % 10;
@@ -23,7 +24,7 @@ int numb1 = Convert.ToInt32(Console.ReadLine());
     if(numb1 <= 99)
     {
         numb1 = numb1 = -1;
-        Console.Write("There is no third numb: ");
+        Console.Write("There is no third numb: error ");
         
     }
     else if (numb1 <= 999)
@@ -40,4 +41,29 @@ int numb1 = Convert.ToInt32(Console.ReadLine());
     }
 
 Console.Write(NumFree(numb1));
+*/    
+// Вариант №2
+// 
+
+int NumFree(int numb1)
+{
+    int Free = numb1 % 10;
+    int resoult = Free;
+    return resoult;
     
+}
+
+Console.Write("Enter the number: ");
+int numb1 = Convert.ToInt32(Console.ReadLine());
+
+  if(numb1 <= 99)
+    {
+        numb1 = numb1 = -1;
+        Console.Write("There is no third numb: error ");
+        
+    }
+    while (numb1>999)
+    {
+        
+
+    }
