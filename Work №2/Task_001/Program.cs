@@ -1,4 +1,4 @@
-﻿/* 
+/* 
 Task №1:
 Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 
@@ -42,7 +42,6 @@ int TwoNum(int numb1)
         
     return Two;
 }
-
 
 Console.Write("Imput any theree-digit number: ");
 int numb1 = Convert.ToInt32(Console.ReadLine());
