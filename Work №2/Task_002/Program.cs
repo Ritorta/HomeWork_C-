@@ -8,7 +8,7 @@ Task №2:
 
 
 // Вариант №1
-// Решение так сказать в лоб без изысков.
+// Простой, рабочий, броский.
 int NumFree(int numb1)
 {
     int Free = numb1 % 10;
@@ -41,29 +41,83 @@ int numb1 = Convert.ToInt32(Console.ReadLine());
     }
 
 Console.Write(NumFree(numb1));
-*/    
+*/
 // Вариант №2
-// 
-
-int NumFree(int numb1)
-{
-    int Free = numb1 % 10;
-    int resoult = Free;
-    return resoult;
-    
-}
+// Через оператор "while" хотя особой разницы с Вариант№1 нету, зачем козе баян...?! 
 
 Console.Write("Enter the number: ");
 int numb1 = Convert.ToInt32(Console.ReadLine());
 
-  if(numb1 <= 99)
+int NumFree(int numb1)
+{
+    int result =0;
+
+    while(numb1 <= 99999)
+    {
+        
+        if(numb1 <= 99)
+        {
+            numb1 = numb1 = -1;
+            result = numb1;
+            Console.Write("There is no third numb: error ");
+            break;
+        }
+        else if (numb1 <= 999)
+        {
+            numb1 = numb1 % 10;
+            result = numb1;
+            break;
+        }
+        else if (numb1 <= 9999)
+        {
+            numb1 = numb1 / 10 % 10;
+            result = numb1;
+            break;
+        }
+        else
+        {
+            numb1 = numb1 / 100 % 10;
+            result = numb1;
+            break;
+        }
+        
+    }
+return result;
+}
+
+Console.Write(NumFree(numb1));
+
+/*
+// Вариант №3
+// Я так до конца и не понел как оно должно работать...
+
+Console.Write("Enter the number: ");
+int numb1 = Convert.ToInt32(Console.ReadLine());
+int leng = numb1.ToString().Length;
+
+int NumFree(int numb1, int leng)
+{
+    int result = 0;
+    int c = 1; // это строчка не рабобрана!!!
+
+    for(int count = leng; count > 3; count--)
+    {
+        
+        c = c * 10; // это строчка не рабобрана!!!
+               
+    }
+    result = (numb1 / c) % 10; 
+
+      if (leng < 3)
     {
         numb1 = numb1 = -1;
+        result = numb1;
         Console.Write("There is no third numb: error ");
-        
     }
-    while (numb1>999)
-    {
-        
 
-    }
+
+return result;
+}
+
+Console.Write(NumFree(numb1, leng));
+*/
