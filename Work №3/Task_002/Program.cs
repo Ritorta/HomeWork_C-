@@ -41,13 +41,15 @@ Console.WriteLine();
 Console.Write(PointPF(Ax, Ay, Az, Bx, By, Bz));
 
 // ---Вариант №2---
-// 
+// Применил ещё один дополнительный оператор, чтобы убрать лишние числа после запятой.
 */
 
 
 double PointPF (double Ax, double Ay, double Az, double Bx, double By, double Bz)
 {
-    return Math.Sqrt(Math.Pow((Ax - Bx), 2)  + Math.Pow((Ay - By),2) + Math.Pow((Az - Bz),2));
+    double Mat = Math.Sqrt(Math.Pow((Ax - Bx), 2)  + Math.Pow((Ay - By),2) + Math.Pow((Az - Bz),2));
+    double Mt = Math.Round(Mat, 2);
+    return Mt;
 }
 
 
@@ -71,4 +73,5 @@ Console.WriteLine();
 
 Console.Write(PointPF(Ax, Ay, Az, Bx, By, Bz));
 
-// Здесь нужно применить оператор для сокращения десятков, ещё не сделано в работе.
+// ---Вариант №3---
+// Можно сократить?
