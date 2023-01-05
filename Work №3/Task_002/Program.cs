@@ -11,9 +11,8 @@ A (7,-5, 0); B (1,-1,9) -> 11.53
 Math.Pow(a,b) - а числов, b квадрат.
 Math.Sqrt(a) - только квадратный корень.
 
-// Вариант №1
+// ---Вариант №1---
 // Базовая рабочая программа.
-
 
 double PointPF (double Ax, double Ay, double Az, double Bx, double By, double Bz)
 {
@@ -41,7 +40,7 @@ Console.WriteLine();
 
 Console.Write(PointPF(Ax, Ay, Az, Bx, By, Bz));
 
-// Вариант №2
+// ---Вариант №2---
 // 
 */
 
@@ -71,3 +70,5 @@ double Bz = Convert.ToDouble(Console.ReadLine());
 Console.WriteLine();
 
 Console.Write(PointPF(Ax, Ay, Az, Bx, By, Bz));
+
+// Здесь нужно применить оператор для сокращения десятков, ещё не сделано в работе.
