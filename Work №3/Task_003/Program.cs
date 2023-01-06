@@ -6,12 +6,13 @@ Task №3:
 5 -> 1, 8, 27, 64, 125
 
 
-
 // ---Вариант №1---
 //Аналогично функции с cеминара через "void".
 
-void Cube(int numb)
+void Cube(int num)
 {
+
+int numb = num;    
 int count = 1;
 
     while (count <= numb)
@@ -24,17 +25,16 @@ int count = 1;
 }
 
 Console.Write("Imput number: ");
-int numb = Convert.ToInt32(Console.ReadLine());
-Cube(numb);
+int num = Convert.ToInt32(Console.ReadLine());
+Cube(num);
 
-*/
 
 // ---Вариант №2---
 // Через функцию "while" и костыль в виде оформления чтобы скрыть "return".
 
-double Cube(double numb)
+double Cube(double num)
 {
-    
+    double numb = num;
     double result = 0; 
     double count = 1;
     
@@ -50,9 +50,24 @@ return result;
 }
 
 Console.Write("Imput number: ");
-double numb = Convert.ToDouble(Console.ReadLine());
+double num = Convert.ToDouble(Console.ReadLine());
 
-Console.WriteLine(Cube(numb));
+Console.WriteLine(Cube(num));
 
+
+*/
 // ---Вариант №3---
 // Через функцию "for"
+
+
+Console.Write("Imput number: ");
+double num = Convert.ToDouble(Console.ReadLine());
+
+int iter = 0;
+
+for(int count = 1; count <= num; count++)
+{
+    Console.WriteLine($"{iter + 1 * count}. Degree cube - {count * count * count}");
+}
+
+
