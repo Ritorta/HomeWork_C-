@@ -90,7 +90,7 @@ return result;
 }
 
 Console.Write(NumFree(numb1));
-*/
+
 
 // ---Вариант №3---
 // Теперь он может брать отрицальные значения и также ввёл ограничения на допустимый ввод.
@@ -134,6 +134,38 @@ int numb1 = Convert.ToInt32(Console.ReadLine());
 
 Console.Write(NumFree(numb1));
 
+*/
+// ---Вариант №4---
+// Нашёл как написать функцию(метод) для проверки разряда числа и применил, программа не работает с отрицательными числами. 
+
+int Digit(int num) // Првоерка разрядности числа.
+{
+int count = 0;
+    while (num > 0)
+    {
+        num = num /10;
+        count = num;
+        count++;
+    }
+    return count;
+}
+
+Console.Write("Imput Number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+string numLeng = Convert.ToString(num); // Преобразование числа в строку, позволяет работать с длинной числа.
+int numDigit = Digit(num); // Присваем переменной работу функции.
+numDigit = numLeng.Length; // Работа функции с длиной числа.
+
+if(numDigit > 2)
+{
+    Console.Write($"=1= {numLeng[2]}" ); // Цифра в скобках обозначает какой разряд числа нужно выводить.
+}
+else
+{
+    Console.Write("Error!");
+}
+
+
 // Можно ли автоматизировать методику, чтобы она не была такой громозкой и принимала более крупные значения.
 
 
@@ -143,12 +175,12 @@ Console.Write(NumFree(numb1));
 
 Console.Write("Enter the number: ");
 int numb1 = Convert.ToInt32(Console.ReadLine());
-int leng = numb1.ToString().Length; // Это рабоатет как абсолютно рандомная длинна?
+int leng = numb1.ToString().Length; // Преобразование числа в строку, позволяет работать с длинной числа, в этой же ствочке сразу сделано присвоение "numb1".
 
 int NumFree(int numb1, int leng)
 {
-    int result = 0;
-    int c = 1; // это строчка не рабобрана(не понятна)!!!
+int result = 0;
+int c = 1; // это строчка не рабобрана(не понятна)!!!
 
     for(int count = leng; count > 3; count--) // Не совсем понял почему уменьшаем.
     {
@@ -164,7 +196,7 @@ int NumFree(int numb1, int leng)
         result = numb1;
         Console.Write("There is no third numb: error ");
     }
-    return result;
+return result;
 }
 
 Console.Write(NumFree(numb1, leng));
