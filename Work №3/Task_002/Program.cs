@@ -42,7 +42,7 @@ Console.Write(PointPF(Ax, Ay, Az, Bx, By, Bz));
 
 // ---Вариант №2---
 // Применил ещё один дополнительный оператор, чтобы убрать лишние числа после запятой.
-*/
+
 
 
 double PointPF (double Ax, double Ay, double Az, double Bx, double By, double Bz)
@@ -73,5 +73,51 @@ Console.WriteLine();
 
 Console.Write(PointPF(Ax, Ay, Az, Bx, By, Bz));
 
+*/
 // ---Вариант №3---
-// Можно сократить?
+// Расписной пример без Math.
+
+
+
+Console.WriteLine("Coordinate A");
+Console.Write("First Coordinate Ax: ");
+double Ax = Convert.ToDouble(Console.ReadLine());
+Console.Write("Second Coordinate Ay: ");
+double Ay = Convert.ToDouble(Console.ReadLine());
+Console.Write("Third Coordinate Az: ");
+double Az = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine();
+
+Console.WriteLine("Coordinate B");
+Console.Write("First Coordinate Bx: ");
+double Bx = Convert.ToDouble(Console.ReadLine());
+Console.Write("Second Coordinate By: ");
+double By = Convert.ToDouble(Console.ReadLine());
+Console.Write("Third Coordinate Bz: ");
+double Bz = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine();
+
+double A = (Bx - Ax);
+double B = (By - Ay);
+double C = (Bz - Az);
+double D = (A * A + B * B + C * C);
+
+double Sqrt(double D) 
+{
+    double num = D; // Присваиваем наше число для вычесления.
+    double root = num / 2; // Корень.
+    double eps = 0.01; // Допустимая погрешность.
+    int count = 0;
+    while(root - num / root > eps)
+    {
+        root = (root + num / root) * 0.5;
+        count++;
+    }
+return root;
+}
+
+double F = Sqrt(D);
+
+string X = F.ToString("#.##");
+
+Console.Write(X);
