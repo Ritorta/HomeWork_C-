@@ -134,17 +134,18 @@ int numb1 = Convert.ToInt32(Console.ReadLine());
 
 Console.Write(NumFree(numb1));
 
-*/
+
 // ---Вариант №4---
 // Нашёл как написать функцию(метод) для проверки разряда числа и применил, программа не работает с отрицательными числами. 
 
 int Digit(int num) // Првоерка разрядности числа.
 {
+int dig = num;    
 int count = 0;
-    while (num > 0)
+    while (dig > 0)
     {
-        num = num /10;
-        count = num;
+        dig = dig /10;
+        count = dig;
         count++;
     }
     return count;
@@ -166,11 +167,7 @@ else
 }
 
 
-// Можно ли автоматизировать методику, чтобы она не была такой громозкой и принимала более крупные значения.
-
-
-/*
-// Вариант который нагуглил и попытался в нём разобраться как он работает.
+// ---Вариант №5---
 // Я так до конца не понял, как оно должно работать...
 
 Console.Write("Enter the number: ");
@@ -180,24 +177,77 @@ int leng = numb1.ToString().Length; // Преобразование числа �
 int NumFree(int numb1, int leng)
 {
 int result = 0;
-int c = 1; // это строчка не рабобрана(не понятна)!!!
-
-    for(int count = leng; count > 3; count--) // Не совсем понял почему уменьшаем.
-    {
-        
-        c = c * 10; // это строчка не рабобрана(не понятна)!!!
-               
-    }
-    result = (numb1 / c) % 10; 
-
-      if (leng < 3)
+int c = 1; // это строчка не рабобрана!!!  
+    if (leng < 3)
     {
         numb1 = numb1 = -1;
         result = numb1;
         Console.Write("There is no third numb: error ");
     }
+    else
+    {
+        for(int count = leng; count > 3; count--) // Не совсем понял почему уменьшаем.
+    
+        
+         c = c * 10; // это строчка не рабобрана!!!
+               
+    }
+    result = (numb1 / c) % 10; 
 return result;
 }
 
 Console.Write(NumFree(numb1, leng));
+
+
 */
+// ---Вариант №6---
+// К самому удачному второму варианту добавлена работа с отрицательными числами.
+
+Console.Write("Enter the number: ");
+int numb1 = Convert.ToInt32(Console.ReadLine());
+
+int NumFree(int numb1)
+{
+int num = numb1;    
+int result = 0;
+
+    while(num <= 999999 & num >= -999999)
+    {
+        
+        if(num <= 99 & num >= -99)
+        {
+            num = num = -1;
+            result = num;
+            Console.Write("There is no third numb: error ");
+            break;
+        }
+        else if (num <= 999 & num >= -999)
+        {
+            num = num % 10;
+            result = num;
+            break;
+        }
+        else if (num <= 9999 & num >= -9999)
+        {
+            num = num / 10 % 10;
+            result = num;
+            break;
+        }
+          else if (num <= 99999 & num >= -99999)
+        {
+            num = num / 100 % 10;
+            result = num;
+            break;
+        }
+        else
+        {
+            num = num / 1000 % 10;
+            result = num;
+            break;
+        }
+        
+    }
+return result;
+}
+
+Console.Write(NumFree(numb1));
