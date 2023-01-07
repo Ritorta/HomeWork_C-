@@ -7,29 +7,6 @@ Task №3:
 
 
 // ---Вариант №1---
-//Аналогично функции с cеминара через "void".
-
-void Cube(int num)
-{
-
-int numb = num;    
-int count = 1;
-
-    while (count <= numb)
-    {
-    int N = (count * count * count);
-    Console.WriteLine(N);
-    count++;
-    }
-  
-}
-
-Console.Write("Imput number: ");
-int num = Convert.ToInt32(Console.ReadLine());
-Cube(num);
-
-
-// ---Вариант №2---
 // Через функцию "while" и костыль в виде оформления чтобы скрыть "return".
 
 double Cube(double num)
@@ -55,9 +32,8 @@ double num = Convert.ToDouble(Console.ReadLine());
 Console.WriteLine(Cube(num));
 
 
-*/
-// ---Вариант №3---
-// Через функцию "for"
+// ---Вариант №2---
+// Через функцию "for" через которую можно в одну строчку)
 
 
 Console.Write("Imput number: ");
@@ -71,3 +47,48 @@ for(int count = 1; count <= num; count++)
 }
 
 
+// ---Вариант №3---
+//Аналогично функции с cеминара через "void".
+
+void Cube(int num)
+{
+
+int numb = num;    
+int count = 1;
+
+    while (count <= numb)
+    {
+    int N = (count * count * count);
+    Console.WriteLine(N);
+    count++;
+    }
+  
+}
+
+Console.Write("Imput number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+Cube(num);
+
+
+*/
+// ---Вариант №4---
+//Аналогично функции с cеминара через "void" и оператором "Math".
+
+void Cube(double num)
+{
+
+double numb = num;    
+double count = 1;
+
+    while (count <= numb)
+    {
+    double N = Math.Pow(count, 3);
+    Console.WriteLine($" {count}. Degree cube = {N} ");
+    count++;
+    }
+  
+}
+
+Console.Write("Imput number: ");
+double num = Convert.ToDouble(Console.ReadLine());
+Cube(num);
