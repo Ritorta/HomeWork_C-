@@ -7,46 +7,66 @@ Task №1:
 23432 -> да
 
 
-/*
-// ---Вариант №1---
-// Пробуемс реализовать
-*/
 
-Console.Write("Imput number: "); 
+// ---Вариант №1---
+// Всё согласно условию, любая длинна числа.
+
+
+Console.Write("Imput number to cheeck palindrome : "); 
 int numb = Convert.ToInt32(Console.ReadLine());
 
 
 
-int Reverse (int numb)
+void Reverse (int numb)
 {
 
 int temp = 0;
+int num = numb;
 
-    while (numb > 0)
+    while (num > 0)
     {
-        temp = temp * 10 + numb % 10;
-        numb = numb / 10;
+        temp = temp * 10 + num % 10;
+        num = num / 10;
+        
     }
-return temp;
-}
 
-int Cheek (int n)
-{
-    int rev_n = Reverse(n);
-
-     if(rev_n == n)
+     if(temp == numb)
         {
             Console.WriteLine("Yes is poly");
-            return 1;
+            
         }
         else
         {
             Console.WriteLine("Dont no poly");
-            return 0;
         }
 }
 
-Console.WriteLine(Reverse(numb));
-Console.WriteLine(Cheek(numb));
+Reverse(numb);
 
+
+*/
+// ---Вариант №2---
+// !!!Вариант №1 основной вариант решения!!!
+
+// Как-то криво через "For" и "String" зато может проверять слова, скрипит но работает же)
+
+
+Console.Write("Imput number to cheeck palindrome : "); 
+string num = Console.ReadLine();
+int len = num.Length; // Определяем символы в строке.
+
+for(int count = 0; count < len/2; count++)
+	{
+		if(num[count] != num[len-count-1])
+		{
+			Console.WriteLine("Dont no poly");
+            break;
+		}
+        else
+        {
+            Console.WriteLine("Yes is poly");
+            break;
+        }
+	}
+	
 
