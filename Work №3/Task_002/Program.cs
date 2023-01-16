@@ -121,3 +121,56 @@ double F = Sqrt(D);
 string X = F.ToString("#.##");
 
 Console.Write(X);
+
+
+/*
+
+// Алгоритм вычисления корня n-ой степени из произвольного положительного числа
+
+int main(void) {
+    double num = 570.15;
+    double root = num / 2;
+    double eps = 0.01;
+    int iter = 0;
+    while( root - num / root > eps ){
+        iter++;
+        root = 0.5 * (root + num / root);
+        printf("Iteration: %d : root = %f\n", iter, root);
+    }
+    printf("root = %f", root);
+    return 0;
+}
+
+// Ниже логарифмическая сложность алгоритма? Или другая? :)
+
+// Теперь уже можно переходить к усложненному варианту задачи. В этом случае решение получается более обобщенным.
+
+double mabs(double x){ return (x < 0)? -x : x; }
+ 
+int main(void) {
+    double num = 8;
+    int rootDegree = 3;
+ 
+    printf("Число, корень которого считаем а = %f\n", num);
+    printf("Корень степени n = %d\n", rootDegree);
+   
+    double eps = 0.00001;             //допустимая погрешность
+    double root = num / rootDegree;   //начальное приближение корня
+    double rn = num;                  //значение корня последовательным делением
+    int countiter = 0;                //число итераций
+    while(mabs(root - rn) >= eps){
+        rn = num;
+        for(int i = 1; i < rootDegree; i++){
+            rn = rn / root;
+        }
+        root = 0.5 * ( rn + root);
+        countiter++;
+    }
+   
+    printf("root = %f\n", root);
+    printf("Число итераций = %i\n", countiter);
+   
+    return 0;
+}
+
+*/
