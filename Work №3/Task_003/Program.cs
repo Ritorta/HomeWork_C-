@@ -26,7 +26,7 @@ Console.Write("Cube degree number: ");
 return result;   
 }
 
-Console.Write("Imput number: ");
+Console.Write("Input number: ");
 double num = Convert.ToDouble(Console.ReadLine());
 
 Console.WriteLine(Cube(num));
@@ -36,7 +36,7 @@ Console.WriteLine(Cube(num));
 // Через функцию "for" через которую можно в одну строчку)
 
 
-Console.Write("Imput number: ");
+Console.Write("Input number: ");
 double num = Convert.ToDouble(Console.ReadLine());
 
 int iter = 0;
@@ -65,7 +65,7 @@ int count = 1;
   
 }
 
-Console.Write("Imput number: ");
+Console.Write("Input number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 Cube(num);
 
@@ -89,6 +89,6 @@ double count = 1;
   
 }
 
-Console.Write("Imput number: ");
+Console.Write("Input number: ");
 double num = Convert.ToDouble(Console.ReadLine());
 Cube(num);

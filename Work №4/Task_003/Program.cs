@@ -8,3 +8,21 @@ Task №3:
 */
 // ---Вариант №3---
 // 
+
+int[] ArrayInput(int )
+{
+
+}
+
+
+
+int[] CreateArray(int size)
+{
+    int[] array = new int[size];
+    for(int i=0; i < size; i++)
+    {
+        Console.Write($"Input a {i + 1} element: ");
+        array[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    return array;
+}

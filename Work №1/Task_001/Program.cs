@@ -12,10 +12,10 @@ a = -9 b = -3 -> max = -3
 
 // Данный вариант писал полностью сам, не много подглядев в семинар, подправил мелкие ошибки.
 
-Console.Write("Imput first number: ");
+Console.Write("Input first number: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Imput second number: ");
+Console.Write("Input second number: ");
 int num2 = Convert.ToInt32(Console.ReadLine());
 
 if (num1 > num2)
@@ -45,10 +45,10 @@ if (num1 > num2)
 оператор "else" (который сразу я присвоить не смог и задался вопросом можно ли ему присваивать условия, 
 лично у меня не получилось без ошибки, хотя я хотел сделать совсем небольшой код)
 
-Console.Write("Imput first number: ");
+Console.Write("Input first number: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Imput second number: ");
+Console.Write("Input second number: ");
 int num2 = Convert.ToInt32(Console.ReadLine());
 
 if (num1 > num2)
@@ -77,10 +77,10 @@ else
 
 // Ещё одна вариация в этот раз строки не прыгают как хотят
  
-Console.Write("Imput first number: ");
+Console.Write("Input first number: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Imput second number: ");
+Console.Write("Input second number: ");
 int num2 = Convert.ToInt32(Console.ReadLine());
 
 if (num1 > num2)
@@ -109,10 +109,10 @@ else
 
 // Сократил код, погуглил оператор "else if" теперь я смог присвоить ему знанчение, наконец-то.
 
-Console.Write("Imput first number: ");
+Console.Write("Input first number: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Imput second number: ");
+Console.Write("Input second number: ");
 int num2 = Convert.ToInt32(Console.ReadLine());
 
 if (num1 > num2)
@@ -129,7 +129,7 @@ else if (num1 < num2)
 //В ходе проверки различный значений в операторы пришёл к выводу, что программа прерывается на сравнении одинаковых чисел, 
 // решил решить проблему, чисто так для себя.
 
-else if (num1 == num2) 
+else if (num1 == num2)
 
 // Интересно есть ли ещё один доп параметр или можно постоянно дублировать else if ? 
 // (Это вопрос к вам преподаватель, у меня к сожалению с работой не так много времени гуглить.)

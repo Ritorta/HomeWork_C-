@@ -30,7 +30,7 @@ int TwoNum(int numb1)
     
 }
 
-Console.Write("Imput any theree-digit number: ");
+Console.Write("Input any theree-digit number: ");
 int numb1 = Convert.ToInt32(Console.ReadLine());
 
 Console.Write(TwoNum(numb1));
@@ -45,7 +45,7 @@ int TwoNum(int numb1)
     return Two;
 }
 
-Console.Write("Imput any theree-digit number: ");
+Console.Write("Input any theree-digit number: ");
 int numb1 = Convert.ToInt32(Console.ReadLine());
 
 if(numb1 >= 100 && numb1 <= 999)
@@ -68,7 +68,7 @@ int TwoNum(int numb1)
 }
 
 
-Console.Write("Imput any theree-digit number: ");
+Console.Write("Input any theree-digit number: ");
 int numb1 = Convert.ToInt32(Console.ReadLine());
 
 if(numb1 >= -999 & numb1 <= -100 || numb1 >= 100 & numb1 <= 999)

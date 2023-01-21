@@ -26,7 +26,7 @@ return result;
 }
 
 
-Console.Write("Imput number: ");
+Console.Write("Input number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
 
@@ -51,7 +51,7 @@ return result;
 }
 
 
-Console.Write("Imput number: ");
+Console.Write("Input number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
 
@@ -83,7 +83,7 @@ return result + SumNumber(temp);
 }
 
 
-Console.Write("Imput number: ");
+Console.Write("Input number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
 

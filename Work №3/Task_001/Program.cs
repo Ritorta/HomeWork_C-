@@ -12,7 +12,7 @@ Task №1:
 // Всё согласно условию, любая длинна числа.
 
 
-Console.Write("Imput number to cheeck palindrome : "); 
+Console.Write("Input number to cheeck palindrome : "); 
 int numb = Convert.ToInt32(Console.ReadLine());
 
 
@@ -51,7 +51,7 @@ Reverse(numb);
 // Как-то криво через "For" и "String" зато может проверять слова, скрипит но работает же)
 
 
-Console.Write("Imput number to cheeck palindrome : "); 
+Console.Write("Input number to cheeck palindrome : "); 
 string num = Console.ReadLine();
 int len = num.Length; // Определяем символы в строке.
 

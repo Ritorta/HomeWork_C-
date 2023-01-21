@@ -11,7 +11,7 @@ Task №3:
 
 // Первый вариант:
 
-Console.Write("Imput Number: ");
+Console.Write("Enter Number: ");
 int numb = Convert.ToInt32(Console.ReadLine());
 
 if (numb %2 == 0)  
