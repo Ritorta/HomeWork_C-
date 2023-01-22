@@ -4,7 +4,7 @@ Task №3:
 
 [3 7 22 2 78] -> 76
 
-*/
+
 // ---Вариант №1---
 // 
 
@@ -64,3 +64,4 @@ int length = Convert.ToInt32(Console.ReadLine());
 
 double[] newArray2 = DoubleRandomArray(length);
 ShowArray(newArray2);
+*/
