@@ -32,18 +32,19 @@ void ShowArray(double[] array)
 Console.WriteLine();
 }
 
-int Difference(int[] array, int minValue, int maxValue)
+double Difference(double[] array, double minValue, double maxValue)
 {
+
     for(int i = 0; i < array.Length; i++)
     {
     
-        if(array[i] < minValue)
-        {
-            minValue = array[i];
-        }
         if (array[i] > maxValue)
         {
             maxValue = array[i];
+        }
+        if(array[i] < minValue)
+        {
+            minValue = array[i];
         }
         
     }
@@ -59,6 +60,7 @@ int maxValue = Convert.ToInt32(Console.ReadLine());
 
 double[] newArray = DoubleRandomArray(length, minValue, maxValue);
 ShowArray(newArray);
-//double Sum = Difference(newArray);
-
+double Sum = Difference(newArray, maxValue, minValue);
+double Sum1 = Math.Round(Sum, 2);
+Console.Write($"Difference min or max: {Sum1}");
 
