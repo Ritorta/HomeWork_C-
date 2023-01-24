@@ -13,3 +13,18 @@ F:\SlyFox\Downloads\Обучение по программированию\Ai\C#
 F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWork_C_Sharp\Work №1\Task_004\obj\Debug\net7.0\Task_004.pdb
 F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWork_C_Sharp\Work №1\Task_004\obj\Debug\net7.0\Task_004.genruntimeconfig.cache
 F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWork_C_Sharp\Work №1\Task_004\obj\Debug\net7.0\ref\Task_004.dll
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\bin\Debug\net7.0\Task_004.exe
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\bin\Debug\net7.0\Task_004.deps.json
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\bin\Debug\net7.0\Task_004.runtimeconfig.json
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\bin\Debug\net7.0\Task_004.dll
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\bin\Debug\net7.0\Task_004.pdb
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\obj\Debug\net7.0\Task_004.csproj.AssemblyReference.cache
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\obj\Debug\net7.0\Task_004.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\obj\Debug\net7.0\Task_004.AssemblyInfoInputs.cache
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\obj\Debug\net7.0\Task_004.AssemblyInfo.cs
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\obj\Debug\net7.0\Task_004.csproj.CoreCompileInputs.cache
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\obj\Debug\net7.0\Task_004.dll
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\obj\Debug\net7.0\refint\Task_004.dll
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\obj\Debug\net7.0\Task_004.pdb
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\obj\Debug\net7.0\Task_004.genruntimeconfig.cache
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_004\obj\Debug\net7.0\ref\Task_004.dll

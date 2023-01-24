@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\SlyFox\\.nuget\\packages\\": {}
+    "C:\\Users\\Esdesu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\SlyFox\\Downloads\\Обучение по программированию\\Ai\\C# Base\\Home Work\\HomeWorkC-\\Task_002\\Task_002.csproj",
+      "projectUniqueName": "C:\\Users\\Esdesu\\Documents\\AI\\C#\\HomeWork_C_Sharp\\Work №1\\Task_002\\Task_002.csproj",
       "projectName": "Task_002",
-      "projectPath": "F:\\SlyFox\\Downloads\\Обучение по программированию\\Ai\\C# Base\\Home Work\\HomeWorkC-\\Task_002\\Task_002.csproj",
-      "packagesPath": "C:\\Users\\SlyFox\\.nuget\\packages\\",
-      "outputPath": "F:\\SlyFox\\Downloads\\Обучение по программированию\\Ai\\C# Base\\Home Work\\HomeWorkC-\\Task_002\\obj\\",
+      "projectPath": "C:\\Users\\Esdesu\\Documents\\AI\\C#\\HomeWork_C_Sharp\\Work №1\\Task_002\\Task_002.csproj",
+      "packagesPath": "C:\\Users\\Esdesu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Esdesu\\Documents\\AI\\C#\\HomeWork_C_Sharp\\Work №1\\Task_002\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\SlyFox\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Esdesu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

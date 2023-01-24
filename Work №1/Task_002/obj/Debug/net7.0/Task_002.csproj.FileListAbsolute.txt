@@ -28,3 +28,18 @@ F:\SlyFox\Downloads\Обучение по программированию\Ai\C#
 F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_002\obj\Debug\net7.0\Task_002.pdb
 F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_002\obj\Debug\net7.0\Task_002.genruntimeconfig.cache
 F:\SlyFox\Downloads\Обучение по программированию\Ai\C# Base\Home Work\HomeWorkC-\Task_002\obj\Debug\net7.0\ref\Task_002.dll
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\bin\Debug\net7.0\Task_002.exe
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\bin\Debug\net7.0\Task_002.deps.json
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\bin\Debug\net7.0\Task_002.runtimeconfig.json
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\bin\Debug\net7.0\Task_002.dll
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\bin\Debug\net7.0\Task_002.pdb
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\obj\Debug\net7.0\Task_002.csproj.AssemblyReference.cache
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\obj\Debug\net7.0\Task_002.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\obj\Debug\net7.0\Task_002.AssemblyInfoInputs.cache
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\obj\Debug\net7.0\Task_002.AssemblyInfo.cs
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\obj\Debug\net7.0\Task_002.csproj.CoreCompileInputs.cache
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\obj\Debug\net7.0\Task_002.dll
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\obj\Debug\net7.0\refint\Task_002.dll
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\obj\Debug\net7.0\Task_002.pdb
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\obj\Debug\net7.0\Task_002.genruntimeconfig.cache
+C:\Users\Esdesu\Documents\AI\C#\HomeWork_C_Sharp\Work №1\Task_002\obj\Debug\net7.0\ref\Task_002.dll
