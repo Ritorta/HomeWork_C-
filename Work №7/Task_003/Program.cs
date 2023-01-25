@@ -12,9 +12,9 @@ Task №3:
 // ---Вариант №1---
 // 
 
-int[,] RandomArray2D(int rows, int colouns, int minValue, int maxValue)
+double[,] RandomArray2D(int rows, int colouns, int minValue, int maxValue)
 {
-    int[,] array = new int[rows, colouns];
+    double[,] array = new double[rows, colouns];
         for(int i = 0; i < rows; i++)
         {
             for(int j = 0; j < colouns; j++)
@@ -25,7 +25,7 @@ int[,] RandomArray2D(int rows, int colouns, int minValue, int maxValue)
 return array;        
 }
 
-void ShowArray2D(int[,] array)
+void ShowArray2D(double[,] array)
 {
     for(int i = 0; i < array.GetLength(0); i++)
     {
@@ -38,21 +38,29 @@ void ShowArray2D(int[,] array)
     Console.WriteLine();
 }
 
-int[,] middleSum (int[,] array)
+double middleSum(double[,] array)
 {
-    int Sum = 0;
-    for(int i = 0; i < array.GetLength(0); i++)
+double sum = 0;   
+    // for(int i = 0; i < array.GetLength(0); i++)
+    for(int j = 0; j < array.GetLength(0); j++)
     {
-        for(int j = 0; j < array.GetLength(1); j++)
+       
+      //  for(int j = 0; j < array.GetLength(1); j++)
+      for(int i = 0; i < array.GetLength(1); i++)
+    
+       
         {
-
+           sum = sum + array[i,j];
+           
         }
+        
     }
-return;
+    
+return sum;
 } 
 
 Console.Write("Input row: ");
-int row = Convert.ToInt32(Console.ReadLine());
+int rows = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input coluns: ");
 int colouns = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input minValue: ");
@@ -60,5 +68,7 @@ int minValue = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input maxValue: ");
 int maxValue = Convert.ToInt32(Console.ReadLine());
 
-int[,] newArray = RandomArray2D(row, colouns, minValue, maxValue);
+double[,] newArray = RandomArray2D(rows, colouns, minValue, maxValue);
 ShowArray2D(newArray);
+double Sum = middleSum(newArray);
+Console.Write(Sum);

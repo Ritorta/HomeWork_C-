@@ -54,4 +54,3 @@ double[,] newArray = RandomDouble2D();
 ShowArray2D(newArray);
 
 
-// https://www.youtube.com/watch?v=g4nGMWwf7OQ
