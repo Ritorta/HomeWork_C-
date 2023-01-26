@@ -44,13 +44,9 @@ void ShowArray(int[,] array)
     Console.WriteLine();
 }
 
-int SpeachArrayIndex(int[,] array)
-{
-Console.Write("Input number rows: ");
-int rows = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Input number colouns: ");
-// int colouns = Convert.ToInt32(Console.ReadLine());
 
+int SpeachArrayIndex(int[,] array, int rows)
+{
 
     for(int i = 0; i < array.GetLength(0); i++)
     {
@@ -58,23 +54,25 @@ int rows = Convert.ToInt32(Console.ReadLine());
         {
             if(array[i,j] == rows)
             {
-                Console.Write($"{array[i,j]}");
-                         
+                
+                Console.Write($"(rows: {i}, colouns: {j}) ");
+                         return  j;  
             } 
-               return i & j;     
+                  
         }
         
     }
 return -1;
 }
 
-
+Console.Write("Input number rows: ");
+int rows = Convert.ToInt32(Console.ReadLine());
 
 
 int[,] newArray = CreateRandomArray2D();
 ShowArray(newArray);
-int W = SpeachArrayIndex(newArray);
-Console.Write($"{W}");
+int W = SpeachArrayIndex(newArray, rows);
+Console.Write($">{W}<");
 
 
 
