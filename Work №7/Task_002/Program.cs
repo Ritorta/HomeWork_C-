@@ -12,3 +12,69 @@ Task №2:
 */
 // ---Вариант №1---
 // 
+
+
+
+int[,] CreateRandomArray2D()
+{
+   // int rows = Convert.ToInt32(Console.ReadLine());
+   // int colouns = Convert.ToInt32(Console.ReadLine());
+   // int minValue = Convert.ToInt32(Console.ReadLine());
+   // int maxValue = Convert.ToInt32(Console.ReadLine());
+
+    int[,] array = new int[2, 2];
+    for(int i = 0; i < 2; i++)
+        for(int j = 0; j < 2; j++)
+        {
+            array[i,j] = new Random().Next(1, 10 + 1);
+        }
+        return array;
+}
+
+void ShowArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + "\t");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+int SpeachArrayIndex(int[,] array)
+{
+Console.Write("Input number rows: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input number colouns: ");
+// int colouns = Convert.ToInt32(Console.ReadLine());
+
+
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            if(array[i,j] == rows)
+            {
+                Console.Write($"{array[i,j]}");
+                         
+            } 
+               return i & j;     
+        }
+        
+    }
+return -1;
+}
+
+
+
+
+int[,] newArray = CreateRandomArray2D();
+ShowArray(newArray);
+int W = SpeachArrayIndex(newArray);
+Console.Write($"{W}");
+
+
+

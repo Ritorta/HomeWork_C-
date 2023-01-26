@@ -45,12 +45,12 @@ double result = 0;
     {
         double sum = 0;
         for(int j = 0; j < array.GetLength(0); j++)
-        
         {
             sum = sum + array[j,i];
+            sum = Math.Round(sum, 3);
             result = sum;
         }
-        Console.Write(sum / array.GetLength(0) + " ");
+        Console.Write(sum / array.GetLength(0) + "\t");
         
     }
     return result / array.GetLength(0);
@@ -64,6 +64,7 @@ Console.Write("Input minValue: ");
 int minValue = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input maxValue: ");
 int maxValue = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
 
 double[,] newArray = RandomArray2D(rows, colouns, minValue, maxValue);
 ShowArray2D(newArray);
