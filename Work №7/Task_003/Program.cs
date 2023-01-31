@@ -38,22 +38,23 @@ void ShowArray2D(double[,] array)
     Console.WriteLine();
 }
 
-double middleSum(double[,] array)
+void middleSum(double[,] array)
 {
-double result = 0;
+
     for(int i = 0; i < array.GetLength(1); i++)
     {
         double sum = 0;
         for(int j = 0; j < array.GetLength(0); j++)
         {
             sum = sum + array[j,i];
-            sum = Math.Round(sum, 3);
-            result = sum;
         }
-        Console.Write(sum / array.GetLength(0) + "\t");
+
+        sum = sum / array.GetLength(0);
+        sum = Math.Round(sum, 3);
         
+        Console.Write(sum + "\t");
     }
-    return result / array.GetLength(0);
+    
 } 
 
 Console.Write("Input row: ");
@@ -68,6 +69,6 @@ Console.WriteLine();
 
 double[,] newArray = RandomArray2D(rows, colouns, minValue, maxValue);
 ShowArray2D(newArray);
-double Sum = middleSum(newArray);
-Console.Write($">{Sum}<");
+middleSum(newArray);
+
 
