@@ -29,3 +29,74 @@
 // int acurry = Convert.ToInt32(Console.ReadLine());
 // RoundValue(num, acurry);
 
+
+
+// Функция Акермана без рекурсии
+// import java.util.Stack;
+
+// public class Ackermann{
+//     public static void main(String[] args) {
+//         System.out.println(solve(2,1));
+//         System.out.println(solve_rec(2,1));
+//     }
+    
+// 	// Идея: рекурсивный метод
+//     public static long solve_rec(long m,long n){
+//         if(m == 0){
+//             return n+1;
+//         }else if(m > 0 && n == 0){
+//             return solve_rec(m-1,1);
+//         }else{
+//             return solve_rec(m-1,solve_rec(m,n-1));
+//         }
+//     }
+    
+//     // Идея: использовать стек для имитации рекурсивной функции. Немного сложно понять
+//     public static long solve(long m,long n){
+//         Stack<Ack> stack = new Stack<>();
+//         stack.push(new Ack(m,n));   // Помещаем запрошенное подтверждение
+//         // res используется для записи значения ack (0, n)
+//         // Если res больше 0, это означает, что текущий вызов функционального уровня (push) закончился, и началось всплывающее окно.
+//         long res = -1;
+//         while(!stack.empty()){
+//             Ack ack = stack.peek(); // Анализируем подтверждение на вершине стека
+//             if(ack.m == 0){         // m равно 0, результат решения ack (0, n) присваивается res и удаляется из стека
+//                 res = ack.n+1;
+//                 stack.pop();
+//             }else if(ack.n == 0 && ack.m > 0){
+//                 if(res < 0) {
+//                     stack.push(new Ack(ack.m-1,1)); // res меньше 0, Ackermann (m, 0) = Ackermann (m-1,1);
+//                 }
+//                 else {
+//                     stack.pop();    // res больше 0, это означает, что оно рассчитано и вы можете вытолкнуть
+//                 }
+//             }else{
+//                 if(ack.data < 0){   // Значение пока не присвоено, только размер
+//                     if(res < 0){
+//                         stack.push(new Ack(ack.m,ack.n-1)); // Вычислить Ackermann (m, n-1), требуемое Ackermann (m, n)
+//                     }else {
+//                         ack.data = res; // Устанавливаем данные, чтобы определить, рассчитаны ли они
+//                         res = -1;       // Сброс на 1
+//                         stack.push(new Ack(ack.m-1,ack.data));// Ackermann (m, n) = Ackermann (m-1, Ackermann (m, n-1)), где Ackermann (m, n-1) - данные
+//                     }
+//                 }else{
+//                     stack.pop();    // Используется вычисленное значение подтверждения, поэтому вытаскиваем его
+//                 }
+//             }
+//         }
+//         return res;
+//     }
+
+// }
+
+// class Ack{
+//     public long m;
+//     public long n;
+//     public long data;
+
+//     public Ack(long m, long n) {
+//         this.m = m;
+//         this.n = n;
+//         this.data = -1;
+//     }
+// }
