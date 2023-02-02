@@ -6,7 +6,7 @@ m = 3, n = 2 -> A(m,n) = 29
 
 
 
-//Функция Акермана:
+//Функция Аккермана:
 
 // Пояснение сокращений в виду отсуствия данных букв в программе С#:
 // lambda - L (Она же - построенная Аккерманом функция)
@@ -25,13 +25,17 @@ m = 3, n = 2 -> A(m,n) = 29
 // Определение Петер:
 // Более простое построение в котором функция имеет только два парметра, вспомогательная функция А не используется.
 
-// Предыдущее пояслнения не соотнясятся с тем что ниже!
+// Пояснения что были выше именно: "L" и "A", более не соотнясятся с тем что ниже(неимеют никакого отношения)!
+
+// Пояснение о сокращений:
+
+// А(m,n) или же просто А - функция Ackkerman.
 
 // A(0, m)          =   m + 1
 // A(n + 1,0)       =   A(n,1)
 // A(n + 1,m + 1)   =   A(n,A(n + 1,m))
 
-// Псевдо-код функции Акермана:
+// Псевдо-код функции Аккермана:
 //          n + 1                      m = 0 
 // A(m,n) = A(m - 1, 1)                m > 0 and n = 0
 //          A(m - 1, A(m, n - 1 ))     m > 0 and n > 0
@@ -41,7 +45,7 @@ m = 3, n = 2 -> A(m,n) = 29
 // ---Вариант №1---
 // Переполнение стека при значении больше (4, 0) и (3,5) 
 
-int Ackermann(int num1, int num2)
+int Ackkerman(int num1, int num2)
 {
     if(num1 == 0)
     {
@@ -49,23 +53,23 @@ int Ackermann(int num1, int num2)
     }
     else if(num2 == 0)
     {
-        return Ackermann(num1 - 1, 1); 
+        return Ackkerman(num1 - 1, 1); 
     }
     else
     {
-        return Ackermann(num1 - 1, Ackermann(num1, num2-1));
+        return Ackkerman(num1 - 1, Ackkerman(num1, num2-1));
     }
  
 }
 
-Console.WriteLine(Ackermann(3,5));
+Console.WriteLine(Ackkerman(3,5));
 
 // ---Вариант №2---
 // Аналогично переполнение стека при значении больше (4, 0) и (3,5) и (5,3)
 
 
 
-int Ackermann(int num1, int num2)
+int Ackkerman(int num1, int num2)
 {
     if(num1 == 0)
     {
@@ -73,16 +77,16 @@ int Ackermann(int num1, int num2)
     }
     else if(num1 > 0 && num2 == 0)
     {
-        return Ackermann(num1 - 1, 1); 
+        return Ackkerman(num1 - 1, 1); 
     }
     else
     {
-        return Ackermann(num1 - 1, Ackermann(num1, num2-1));
+        return Ackkerman(num1 - 1, Ackkerman(num1, num2-1));
     }
    
 }
 
-Console.WriteLine(Ackermann(4,0));
+Console.WriteLine(Ackkerman(4,0));
 
 
 */
@@ -92,7 +96,7 @@ Console.WriteLine(Ackermann(4,0));
 // один из аргументов функции есть та же рекурсивная функция.
 
 
-int Ackermann(int num1, int num2)
+int Ackkerman(int num1, int num2)
 {
     if(num1 == 0)
     {
@@ -100,11 +104,11 @@ int Ackermann(int num1, int num2)
     }
     else if(num1 > 0 && num2 == 0)
     {
-        return Ackermann(num1 - 1, 1); 
+        return Ackkerman(num1 - 1, 1); 
     }
     else if(num1 > 0 && num2 > 0)
     {
-        return Ackermann(num1 - 1, Ackermann(num1, num2-1));
+        return Ackkerman(num1 - 1, Ackkerman(num1, num2-1));
     }
     else
     {
@@ -112,7 +116,7 @@ int Ackermann(int num1, int num2)
     }
 }
 
-Console.WriteLine(Ackermann(5,3));
+Console.WriteLine(Ackkerman(5,3));
 
 
 
