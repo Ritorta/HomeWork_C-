@@ -14,3 +14,46 @@ Task №2:
 */
 // ---Вариант №1---
 // 
+
+int[,] CreateDoubleArray2D()
+{
+    int[,] array = new int[8,4];
+    
+    for(int i = 0; i < 8; i++)
+    {
+        for(int j = 0; j < 4; j++)
+        {
+            array[i,j] = new Random().Next(1,10 + 1);
+        }
+    }
+    return array;
+}
+
+void ShowArray2D(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + "\t");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+void SumRowMin(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        int sum = 0;
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            sum = array[i,j] + sum;
+        }
+         if(sum )
+}
+
+int[,] newArray = CreateDoubleArray2D();
+ShowArray2D(newArray);
+SumRowMin(newArray);
