@@ -21,7 +21,7 @@ int[,,] CreatTripleArray3D()
         {
             for(int k = 0; k < 2; k++)
             {
-                array[i,j,k] = new Random().Next(10,50,99 +1);
+                array[i,j,k] = new Random().Next(10,99 +1);
             }
         }
     } 
@@ -42,3 +42,6 @@ void ShowTripleArray3D(int[,,] array)
         }
     }
 }
+
+int[,,] newArray = CreatTripleArray3D();
+ShowTripleArray3D(newArray);

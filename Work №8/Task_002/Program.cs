@@ -44,15 +44,35 @@ void ShowArray2D(int[,] array)
 
 void SumRowMin(int[,] array)
 {
+    int index = 0;
+    int min = 0;
+    // for(int i = 0; i < array.GetLength(1); i++) //Другой вариант 
+    // {
+    //     min = min + array[0,i];
+    // }
     for(int i = 0; i < array.GetLength(0); i++)
     {
         int sum = 0;
         for(int j = 0; j < array.GetLength(1); j++)
         {
             sum = array[i,j] + sum;
+          
         }
-         if(sum )
+            if(i == 0)
+            {
+                min = sum;
+            }
+            else if(sum < min)
+            {
+                min = sum;
+                index = i;
+            }
+            
+    }
+    Console.WriteLine($"Thes row have min sum: Number row {index + 1}.");
 }
+
+
 
 int[,] newArray = CreateDoubleArray2D();
 ShowArray2D(newArray);
