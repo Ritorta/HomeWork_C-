@@ -32,6 +32,7 @@ void ShowTripleArray3D(int[,,] array)
 {
     for(int i = 0; i < array.GetLength(0); i++)
     {
+        Console.WriteLine($"      Layer №: {(i + 1)}");
         for(int j = 0 ; j < array.GetLength(1); j++)
         {
             for(int k = 0; k < array.GetLength(2); k++)
@@ -41,6 +42,7 @@ void ShowTripleArray3D(int[,,] array)
             }
             Console.WriteLine();
         }
+        Console.WriteLine();
     }
 }
 
