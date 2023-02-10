@@ -11,9 +11,8 @@ Task №3:
 18 20
 15 18
 
-*/
-// ---Вариант №1---
-// Без проверки количество стобцов первой матрицы должно равняться количеству строк второй матрицы.
+
+
                         
 //     a11 a12 a13       b11 b12 b13                
 // A = a21 a22 a23 ; B = b21 b22 b23 ;  
@@ -28,6 +27,8 @@ Task №3:
 // Чтобы матрицу №1 можно было умножить на матрицу №2 нужно, чтобы число столбцов матрицы №1 равнялось числу строк матрицы №2.              
 
 
+// ---Вариант №1---
+// Без проверки, нельзя задать размер второй матрицы, количество строк и стобцов должно быть равно иначе считает некоректно.
 
 int[,] CreatMatrix(int rows, int colouns)
 {
@@ -100,3 +101,86 @@ else
 }
 
 
+*/
+// ---Вариант №2---
+// Можно задать размер второй матрицы, плюс проверка на коректность.
+
+
+int[,] CreatMatrix(int rows, int colouns)
+{
+int[,] array = new int[rows, colouns];
+       
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < colouns; j++)
+        {
+            array[i,j] = new Random().Next(1, 10);            
+        }
+    }
+return array;      
+}
+
+void ShowArray(int[,] array)
+{
+    
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+       
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + " ");       
+        }
+        Console.WriteLine("");
+        
+    }
+    Console.WriteLine("");
+}
+
+int[,] SumCompositionArray(int[,]array1, int[,]array2)
+{
+   
+int[,] array3 = new int[array1.GetLength(0), array2.GetLength(1)];
+
+    for(int i = 0; i < array3.GetLength(0); i++)
+    {
+        for(int j = 0; j < array3.GetLength(1); j++)
+        {
+            array3[i,j] = 0;
+            for(int k = 0; k < array1.GetLength(1); k++)  
+            {            
+            array3[i,j] = array3[i,j] + array1[i,k] * array2[k,j];
+            }
+        }
+    }
+return array3;
+}
+
+Console.Write("Enter quantity rows first matrix A: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter quantity colouns first matrix A: ");
+int colouns = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter quantity rows second matrix B: ");
+int rows2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter quantity colouns second matrix B: ");
+int colouns2 = Convert.ToInt32(Console.ReadLine());
+
+if(rows2 == colouns)
+{
+int[,] Array1 = CreatMatrix(rows, colouns);
+Console.WriteLine();
+Console.WriteLine("Matrix A: ");
+ShowArray(Array1);
+int[,] Array2 = CreatMatrix(rows2, colouns2);
+Console.WriteLine("Matrix B: ");
+ShowArray(Array2);
+int[,] Array3 = SumCompositionArray(Array1, Array2);
+Console.WriteLine("Matrix C: ");
+ShowArray(Array3);
+
+}
+else
+{
+    Console.WriteLine();   
+    Console.WriteLine("Error!");
+    Console.WriteLine("In order for first matrix A to be multiplied by second matrix B, it is necessary that the number of columns of first matrix A be equal to the number of rows of second matrix B, and AB!=BA.");
+}
