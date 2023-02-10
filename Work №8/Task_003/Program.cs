@@ -114,7 +114,7 @@ int[,] array = new int[rows, colouns];
     {
         for(int j = 0; j < colouns; j++)
         {
-            array[i,j] = new Random().Next(1, 10);            
+            array[i,j] = new Random().Next(-10, 10);            
         }
     }
 return array;      
