@@ -269,108 +269,110 @@ ShowArray(Array3);
 //     Console.WriteLine("In order for first matrix A to be multiplied by second matrix B, it is necessary that the number of columns of first matrix A be equal to the number of rows of second matrix B, and AB!=BA.");
 // }
 
-
 */
 
-int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
-{
-    int[,,] array = new int[layer,rows,colouns];
+
+
+// int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
+// {
+//     int[,,] array = new int[layer,rows,colouns];
     
-    for(int i = 0; i < layer; i++)
-    {
-        for(int j = 0; j < rows; j++)
-        {
-            for(int k = 0; k < colouns; k++)
-            {
-                array[i,j,k] = new Random().Next(10,99 +1);
-            }
-        }
-    } 
-    return array;
-}
+//     for(int i = 0; i < layer; i++)
+//     {
+//         for(int j = 0; j < rows; j++)
+//         {
+//             for(int k = 0; k < colouns; k++)
+//             {
+//                 array[i,j,k] = new Random().Next(10,99 +1);
+//             }
+//         }
+//     } 
+//     return array;
+// }
 
-void ShowTripleArray3D(int[,,] array)
-{
-    for(int i = 0; i < array.GetLength(0); i++)
-    {
-        Console.WriteLine($"---Layer №: {(i + 1)}");
-        for(int j = 0 ; j < array.GetLength(1); j++)
-        {
-            for(int k = 0; k < array.GetLength(2); k++)
-            {
-                Console.Write(" " + array[i,j,k] + " ");
-                Console.Write($"({i},{j},{k})");
-            }
-            Console.WriteLine();
-        }
-        Console.WriteLine();
-    }
-}
+// void ShowTripleArray3D(int[,,] array)
+// {
+//     for(int i = 0; i < array.GetLength(0); i++)
+//     {
+//         Console.WriteLine($"---Layer №: {(i + 1)}");
+//         for(int j = 0 ; j < array.GetLength(1); j++)
+//         {
+//             for(int k = 0; k < array.GetLength(2); k++)
+//             {
+//                 Console.Write(" " + array[i,j,k] + " ");
+//                 Console.Write($"({i},{j},{k})");
+//             }
+//             Console.WriteLine();
+//         }
+//         Console.WriteLine();
+//     }
+// }
 
-int[,,] CheckUniquenessNumbers(int[,,] array)
-{
-    for(int i = 0; i < array.GetLength(0); i++)
-    {
-        for(int j = 0; j < array.GetLength(1); j++)
-        {
-            for(int k = 0; k < array.GetLength(2); k++)
-            {   
-                int maxNumber = 0;
-                if(array[i,j,k] > maxNumber)
-                {
-                    maxNumber = array[i,j,k];
-
-                }
-                 if(array[i,j,k] == array[i,j,k])
-                        {
+// int[,,] CheckUniquenessNumbers(int[,,] array)
+// {
+//     int maxNumber = 0;
+//     for(int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for(int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for(int k = 0; k < array.GetLength(2); k++)
+//             {   
+                
+//                 if(array[i,j,k] > maxNumber)
+//                 {
+//                     maxNumber = array[i,j,k];
+//                 }
+//                     for(int g = 0; g < array.GetLength(2); g++)
+//                     {
+//                         if(array[i,j,k] == array[i,j,g])
+//                         {               
                             
-                            
-                            array[i,j,k] = maxNumber;
-                            maxNumber++;
-
-
-                        
-                        }
+//                             maxNumber++;
+//                             array[i,j,g] = maxNumber;
+//                         }
+//                     }
                     
                    
                        
-            }
+//             }
                 
-        }
-    }
+//         }
+//     }
     
-   return array;     
-}
+//    return array;     
+// }
 
-Console.Write("Enter quantity list: ");
-int layer = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter quantity rows: ");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter quantity colouns: ");
-int colouns = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Enter quantity list: ");
+// int layer = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Enter quantity rows: ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Enter quantity colouns: ");
+// int colouns = Convert.ToInt32(Console.ReadLine());
 
-if(layer == 0 || rows == 0 || colouns == 0)
-{
-    Console.WriteLine("Error!");
-}
-else if(layer <= 3 && rows <= 6 && colouns <= 5)
-{
-    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
-       ShowTripleArray3D(newArray);
-        CheckUniquenessNumbers(newArray);
-        ShowTripleArray3D(newArray);
+// if(layer == 0 || rows == 0 || colouns == 0)
+// {
+//     Console.WriteLine("Error!");
+// }
+// else if(layer <= 3 && rows <= 6 && colouns <= 5)
+// {
+//     int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
+//        ShowTripleArray3D(newArray);
+//         CheckUniquenessNumbers(newArray);
+//         ShowTripleArray3D(newArray);
      
-}
-else if(layer <= 3 && rows <= 5 && colouns <= 6)
-{
-    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
+// }
+// else if(layer <= 3 && rows <= 5 && colouns <= 6)
+// {
+//     int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
 
-    ShowTripleArray3D(newArray);
-    CheckUniquenessNumbers(newArray);
-        ShowTripleArray3D(newArray);
+//     ShowTripleArray3D(newArray);
+//     CheckUniquenessNumbers(newArray);
+//         ShowTripleArray3D(newArray);
      
-}
-else
-{
-    Console.WriteLine("Error!");
-}
+// }
+// else
+// {
+//     Console.WriteLine("Error!");
+// }
+
+
