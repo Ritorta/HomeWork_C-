@@ -154,60 +154,223 @@
 //         Console.WriteLine();
 //     }
 // }
+/*
 
-
-int[,] CreateMatrix(int row, int col, int min, int max)
+int[,] CreatMatrix()
 {
-    int[,] matrix = new int[row, col];
+
+Console.Write("Enter quantity rows first matrix A: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter quantity colouns first matrix A: ");
+int colouns = Convert.ToInt32(Console.ReadLine());
+
+int[,] array = new int[rows, colouns];
+
+       
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < colouns; j++)
+        {
+            array[i,j] = new Random().Next(-10, 10);
+                      
+        }
+        
+    }
+return array; 
+}
+
+int[,] CreatMatrix2()
+{
+Console.Write("Enter quantity rows second matrix B: ");
+int rows2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter quantity colouns second matrix B: ");
+int colouns2 = Convert.ToInt32(Console.ReadLine());
+
+int[,] array2 = new int[rows2, colouns2];
+
+       
+    for(int i = 0; i < rows2; i++)
+    {
+        for(int j = 0; j < colouns2; j++)
+        {
+            array2[i,j] = new Random().Next(-10, 10);
+                      
+        }
+    }
+
+ return array2;     
+}
+
+void ShowArray(int[,] array)
+{
     
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    for(int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+       
+        for(int j = 0; j < array.GetLength(1); j++)
         {
-            matrix[i, j] = new Random().Next(min, max + 1);
+            Console.Write(array[i,j] + " ");       
         }
+        Console.WriteLine("");
+        
     }
-    return matrix;
+    Console.WriteLine("");
 }
-void PrintMatrix(int[,] matrix)
+
+int[,] SumCompositionArray(int[,]array1, int[,]array2)
 {
-    for (int i = 0; i < matrix.GetLength(0); i++)
+   
+int[,] array3 = new int[array1.GetLength(0), array2.GetLength(1)];
+
+    for(int i = 0; i < array3.GetLength(0); i++)
     {
-        Console.Write("|");
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for(int j = 0; j < array3.GetLength(1); j++)
         {
-            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],1}|");
-            else Console.Write($"{matrix[i, j],1}");
-        }
-        Console.WriteLine("|");
-    }
-}
-int[,] DivMatrix(int[,] matrix1, int[,] matrix2)
-{
-    int[,] matrix3 = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
-    if (matrix1.GetLength(1) == matrix2.GetLength(0))
-    {
-        for (int i = 0; i < matrix3.GetLength(0); i++)
-        {
-            for (int j = 0; j < matrix3.GetLength(1); j++)
+            if(j < array1.GetLength(1) == i < array2.GetLength(0))
             {
-                matrix3[i, j] = 0;
-                for (int n = 0; n < matrix1.GetLength(1); n++)
-                {
-                    matrix3[i, j] += matrix1[i, n] * matrix2[n, j];
+                array3[i,j] = 0;
+                for(int k = 0; k < array1.GetLength(1); k++)  
+                {            
+                array3[i,j] = array3[i,j] + array1[i,k] * array2[k,j];
                 }
+            }
+            else
+            {
+                
+                Console.WriteLine();   
+                Console.WriteLine("Error!");
+                Console.WriteLine("In order for first matrix A to be multiplied by second matrix B, it is necessary that the number of columns of first matrix A be equal to the number of rows of second matrix B, and AB!=BA.");
+                return array2;
             }
         }
     }
-    return matrix3;
+return array3;
 }
 
 
-    int[,] array2D = CreateMatrix(new Random().Next(2,4), new Random().Next(2, 4), 0, 9);
-    int[,] matrix = CreateMatrix(new Random().Next(2, 4), new Random().Next(2, 4), 0, 9);
-    PrintMatrix(array2D);
-    Console.WriteLine();
-    PrintMatrix(matrix);
-    Console.WriteLine();
-    PrintMatrix(DivMatrix(array2D, matrix));
-    Console.ReadLine();
+
+// if(i   == CreatMatrix)
+// {
+int[,] Array1 = CreatMatrix();
+Console.WriteLine();
+Console.WriteLine("Matrix A: ");
+ShowArray(Array1);
+int[,] Array2 = CreatMatrix2();
+Console.WriteLine("Matrix B: ");
+ShowArray(Array2);
+int[,] Array3 = SumCompositionArray(Array1, Array2);
+Console.WriteLine("Matrix C: ");
+ShowArray(Array3);
+// }
+// else
+// {
+//     Console.WriteLine();   
+//     Console.WriteLine("Error!");
+//     Console.WriteLine("In order for first matrix A to be multiplied by second matrix B, it is necessary that the number of columns of first matrix A be equal to the number of rows of second matrix B, and AB!=BA.");
+// }
+
+
+*/
+
+int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
+{
+    int[,,] array = new int[layer,rows,colouns];
+    
+    for(int i = 0; i < layer; i++)
+    {
+        for(int j = 0; j < rows; j++)
+        {
+            for(int k = 0; k < colouns; k++)
+            {
+                array[i,j,k] = new Random().Next(10,99 +1);
+            }
+        }
+    } 
+    return array;
+}
+
+void ShowTripleArray3D(int[,,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        Console.WriteLine($"---Layer №: {(i + 1)}");
+        for(int j = 0 ; j < array.GetLength(1); j++)
+        {
+            for(int k = 0; k < array.GetLength(2); k++)
+            {
+                Console.Write(" " + array[i,j,k] + " ");
+                Console.Write($"({i},{j},{k})");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+    }
+}
+
+int[,,] CheckUniquenessNumbers(int[,,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            for(int k = 0; k < array.GetLength(2); k++)
+            {   
+                int maxNumber = 0;
+                if(array[i,j,k] > maxNumber)
+                {
+                    maxNumber = array[i,j,k];
+
+                }
+                 if(array[i,j,k] == array[i,j,k])
+                        {
+                            
+                            
+                            array[i,j,k] = maxNumber;
+                            maxNumber++;
+
+
+                        
+                        }
+                    
+                   
+                       
+            }
+                
+        }
+    }
+    
+   return array;     
+}
+
+Console.Write("Enter quantity list: ");
+int layer = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter quantity rows: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter quantity colouns: ");
+int colouns = Convert.ToInt32(Console.ReadLine());
+
+if(layer == 0 || rows == 0 || colouns == 0)
+{
+    Console.WriteLine("Error!");
+}
+else if(layer <= 3 && rows <= 6 && colouns <= 5)
+{
+    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
+       ShowTripleArray3D(newArray);
+        CheckUniquenessNumbers(newArray);
+        ShowTripleArray3D(newArray);
+     
+}
+else if(layer <= 3 && rows <= 5 && colouns <= 6)
+{
+    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
+
+    ShowTripleArray3D(newArray);
+    CheckUniquenessNumbers(newArray);
+        ShowTripleArray3D(newArray);
+     
+}
+else
+{
+    Console.WriteLine("Error!");
+}

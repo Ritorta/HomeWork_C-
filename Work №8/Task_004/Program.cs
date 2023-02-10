@@ -11,15 +11,15 @@ Task №4:
 // ---Вариант №1---
 // 
 
-int[,,] CreatTripleArray3D()
+int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
 {
-    int[,,] array = new int[2,2,2];
+    int[,,] array = new int[layer,rows,colouns];
     
-    for(int i = 0; i < 2; i++)
+    for(int i = 0; i < layer; i++)
     {
-        for(int j = 0; j < 2; j++)
+        for(int j = 0; j < rows; j++)
         {
-            for(int k = 0; k < 2; k++)
+            for(int k = 0; k < colouns; k++)
             {
                 array[i,j,k] = new Random().Next(10,99 +1);
             }
@@ -32,7 +32,7 @@ void ShowTripleArray3D(int[,,] array)
 {
     for(int i = 0; i < array.GetLength(0); i++)
     {
-        Console.WriteLine($"      Layer №: {(i + 1)}");
+        Console.WriteLine($"---Layer №: {(i + 1)}");
         for(int j = 0 ; j < array.GetLength(1); j++)
         {
             for(int k = 0; k < array.GetLength(2); k++)
@@ -46,5 +46,30 @@ void ShowTripleArray3D(int[,,] array)
     }
 }
 
-int[,,] newArray = CreatTripleArray3D();
-ShowTripleArray3D(newArray);
+
+
+Console.Write("Enter quantity list: ");
+int layer = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter quantity rows: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter quantity colouns: ");
+int colouns = Convert.ToInt32(Console.ReadLine());
+
+if(layer == 0 || rows == 0 || colouns == 0)
+{
+    Console.WriteLine("Error!");
+}
+else if(layer <= 3 && rows <= 6 && colouns <= 5)
+{
+    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
+    ShowTripleArray3D(newArray);
+}
+else if(layer <= 3 && rows <= 5 && colouns <= 6)
+{
+    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
+    ShowTripleArray3D(newArray);
+}
+else
+{
+    Console.WriteLine("Error!");
+}
