@@ -432,43 +432,200 @@ ShowArray(Array3);
 // ShowArray(newArray);
 //----------------------------------------------------------------------------
 
-var notUniqueElements = 0;      //Счётчик не уникальных элементов
-            int[] myArray = { 1, 3, 1, 3, 4, 4, 5, 12, 14, 14, 11, 5, 8, 4};
-            for (int i = 1; i < myArray.Length; i++)
-            {
-                for (int a = i-1; a >= 0; a--)
-                {
-                    if (myArray[i] == myArray[a])   //Проверяем элемент на уникальность
-                    {
-                        notUniqueElements++;     //Если такой элемент уже есть, считаем его
-                        break;                             //И переходим к следующему элементу
-                    }
-                }
-            }
-            int[] uniqueArray = new int[myArray.Length - notUniqueElements]; // Массив уникальных элементов
-            uniqueArray[0] = myArray[0];   //Первый элемент уже уникальный, записываем его
-                for (int i = 1, b = 1; i < myArray.Length; i++)
-                {
-                    var uniqueElement = true;   //Для проверки на уникальность
-                    for (int a = i-1; a >= 0; a--)
-                    {
-                        if (myArray[i] == myArray[a])    //Делаем тоже самое, только для записи уникальных чисел в массив
-                        {
-                            uniqueElement = false;  //Если элемент не уникальный
-                            break;                          //Пропускаем его
-                        }
-                    }
-                    if (uniqueElement)                        //Если уникальный
-                    {
-                        uniqueArray[b] = myArray[i];    // Запись уникального элемента в массив
-                        b++; //Индекс для записи в массив уникальных чисел
-                    }
-                }
-            foreach (var el in uniqueArray)      // Вывод элементов на консоль
-            {
-                Console.WriteLine(el);
-            }
- 
-            Console.ReadKey();
+// var notUniqueElements = 0;      //Счётчик не уникальных элементов
+//             int[] myArray = new int[99];
+//               for(int i = 0; i < 99; i++)
+//     {
+//         myArray[i] = new Random().Next(1, 99 + 1);
 
-         
+//     }
+    
+
+//             for (int i = 1; i < myArray.Length; i++)
+//             {
+//                 for (int a = i-1; a >= 0; a--)
+//                 {
+//                     if (myArray[i] == myArray[a])   //Проверяем элемент на уникальность
+//                     {
+//                         notUniqueElements++;     //Если такой элемент уже есть, считаем его
+//                         break;                             //И переходим к следующему элементу
+//                     }
+//                 }
+//             }
+//             int[] uniqueArray = new int[myArray.Length - notUniqueElements]; // Массив уникальных элементов
+//             uniqueArray[0] = myArray[0];   //Первый элемент уже уникальный, записываем его
+//                 for (int i = 1, b = 1; i < myArray.Length; i++)
+//                 {
+//                     var uniqueElement = true;   //Для проверки на уникальность
+//                     for (int a = i-1; a >= 0; a--)
+//                     {
+//                         if (myArray[i] == myArray[a])    //Делаем тоже самое, только для записи уникальных чисел в массив
+//                         {
+//                             uniqueElement = false;  //Если элемент не уникальный
+//                             break;                          //Пропускаем его
+//                         }
+//                     }
+//                     if (uniqueElement)                        //Если уникальный
+//                     {
+//                         uniqueArray[b] = myArray[i];    // Запись уникального элемента в массив
+//                         b++; //Индекс для записи в массив уникальных чисел
+//                     }
+//                 }
+//             foreach (var el in uniqueArray)      // Вывод элементов на консоль
+//             {
+//                 Console.WriteLine($" {el}  ");
+//             }
+ 
+           
+//------------------------------------------------------------------
+        //   var notUniqueElements = 0;      //Счётчик не уникальных элементов
+        //     int[] myArray = { 1, 3, 1, 3, 4, 4, 5, 12, 14, 14, 11, 5, 8, 4};
+        //     for (int i = 1; i < myArray.Length; i++)
+        //     {
+        //         for (int a = i-1; a >= 0; a--)
+        //         {
+        //             if (myArray[i] == myArray[a])   //Проверяем элемент на уникальность
+        //             {
+        //                 notUniqueElements++;     //Если такой элемент уже есть, считаем его
+        //                 break;                             //И переходим к следующему элементу
+        //             }
+        //         }
+        //     }
+        //     int[] uniqueArray = new int[myArray.Length - notUniqueElements]; // Массив уникальных элементов
+        //     uniqueArray[0] = myArray[0];   //Первый элемент уже уникальный, записываем его
+        //         for (int i = 1, b = 1; i < myArray.Length; i++)
+        //         {
+        //             var uniqueElement = true;   //Для проверки на уникальность
+        //             for (int a = i-1; a >= 0; a--)
+        //             {
+        //                 if (myArray[i] == myArray[a])    //Делаем тоже самое, только для записи уникальных чисел в массив
+        //                 {
+        //                     uniqueElement = false;  //Если элемент не уникальный
+        //                     break;                          //Пропускаем его
+        //                 }
+        //             }
+        //             if (uniqueElement)                        //Если уникальный
+        //             {
+        //                 uniqueArray[b] = myArray[i];    // Запись уникального элемента в массив
+        //                 b++; //Индекс для записи в массив уникальных чисел
+        //             }
+        //         }
+        //     foreach (var el in uniqueArray)      // Вывод элементов на консоль
+        //     {
+        //         Console.WriteLine(el);
+        //     }
+ 
+        //     Console.ReadKey();
+
+        //     //-------------------------------------
+
+
+
+Console.WriteLine("Введите размер массива");
+int size = Convert.ToInt32(Console.ReadLine());
+
+int[,] nums = new int[size, size];
+
+int num = 1;
+int i = 0;
+int j = 0;
+
+while (num <= size * size)
+{
+    nums[i, j] = num;
+    if (i <= j + 1 && i + j < size - 1)
+        ++j;
+    else if (i < j && i + j >= size - 1)
+        ++i;
+    else if (i >= j && i + j > size - 1)
+        --j;
+    else
+        --i;
+    ++num;
+}
+
+PrintArray(nums);
+
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        Console.Write("[ ");
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " \t");
+        }
+        Console.Write("]");
+        Console.WriteLine("");
+    }
+}
+// ----------------------------------------------------
+// int len = 6;
+// int[,] table = new int[len, len];
+// FillArraySpiral(table, len);
+// PrintArray(table);
+
+
+// // Функция заполнения массива по спирали начиная с 1
+// void FillArraySpiral(int[,] array, int n)
+// {
+//     int i = 0, j = 0;
+//     int value = 1;
+//     for (int e = 0; e < n * n; e++)
+//     {
+//         int k = 0;
+//         do { array[i, j++] = value++; } 
+//         while (++k < n - 1);
+//         for (k = 0; k < n - 1; k++) array[i++, j] = value++;
+//         for (k = 0; k < n - 1; k++) array[i, j--] = value++;
+//         for (k = 0; k < n - 1; k++) array[i--, j] = value++;
+//         ++i; ++j;
+//         n = n < 2 ? 0 : n - 2;
+//     }
+// }
+
+// //  Функция вывода двумерного массива в терминал
+// void PrintArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             if (array[i, j] < 10)
+//             {
+//                 Console.Write("0" + array[i, j]);
+//                 Console.Write(" ");
+//             }
+//             else Console.Write(array[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+//  const int n = 6;
+//             const int m = 8;
+//             int[,] matrix = new int[n, m];
+ 
+//             int row = 0;
+//             int col = 0;
+//             int dx = 1;
+//             int dy = 0;
+//             int dirChanges = 0;
+//             int visits = m;
+ 
+//             for (int i = 0; i < matrix.Length; i++) {
+//                 matrix[row, col] = i + 1;
+//               if (--visits == 0) {
+//                 visits = m * (dirChanges %2) + n * ((dirChanges + 1) %2) - (dirChanges/2 - 1) - 2;
+//                 int temp = dx;
+//                 dx = -dy;
+//                 dy = temp;
+//                 dirChanges++;
+//               }
+ 
+//               col += dx;
+//               row += dy;
+//             }
+
+
+

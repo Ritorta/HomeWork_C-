@@ -46,7 +46,7 @@ void ShowTripleArray3D(int[,,] array)
     }
 }
 
-void SortArray3D(int[,,] array, int layer, int rows, int colouns)
+void SortArray3D(int[,,] array)
 {
     int notUniqueElements = 0;      //Счётчик не уникальных элементов
           
@@ -56,7 +56,7 @@ void SortArray3D(int[,,] array, int layer, int rows, int colouns)
                 { 
                     for (int k = 1; k < array.GetLength(2); i++)
                     {
-                        for (int a = i - 1; a >= 0; a--)
+                        for (int a = k - 1; a >= 0; a--)
                         {
                             if (array[i,j,k] == array[j,k,a])   //Проверяем элемент на уникальность
                             {
@@ -67,8 +67,8 @@ void SortArray3D(int[,,] array, int layer, int rows, int colouns)
                     }
                 }
             }
-            int[,,] uniqueArray = new int[layer, rows, colouns  - notUniqueElements]; // Массив уникальных элементов
-            uniqueArray[layer, rows, colouns] = array[layer, rows, colouns];   //Первый элемент уже уникальный, записываем его
+            int[,,] uniqueArray = new int[array.GetLength(0), array.GetLength(1), array.GetLength(2)  - notUniqueElements]; // Массив уникальных элементов
+            uniqueArray[0, 0, 0] = array[0, 0, 0];   //Первый элемент уже уникальный, записываем его
                 for (int i = 1; i < array.GetLength(0); i++)
                 {
                     for (int j = 1; j < array.GetLength(1); i++)                       
@@ -76,7 +76,7 @@ void SortArray3D(int[,,] array, int layer, int rows, int colouns)
                         for (int k = 1, b = 1; k < array.GetLength(2); i++)
                         {
                           var uniqueElement = true;   //Для проверки на уникальность
-                            for (int a = i-1; a >= 0; a--)
+                            for (int a = i - 1; a >= 0; a--)
                             {
                                 if (array[i,j,k] == array[j,k,a])    //Делаем тоже самое, только для записи уникальных чисел в массив
                                 {
@@ -117,7 +117,7 @@ else if(layer <= 3 && rows <= 6 && colouns <= 5)
 {
     int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
     ShowTripleArray3D(newArray);
-    SortArray3D(newArray, layer, rows, colouns);
+    SortArray3D(newArray);
     ShowTripleArray3D(newArray);
     
 }
@@ -125,7 +125,7 @@ else if(layer <= 3 && rows <= 5 && colouns <= 6)
 {
     int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
     ShowTripleArray3D(newArray);
-    SortArray3D(newArray, layer, rows, colouns);
+    SortArray3D(newArray);
     ShowTripleArray3D(newArray);
 }
 else
