@@ -19,7 +19,7 @@
 // }
 
 
-     
+ //    ------------------------------------------
 
 
 
@@ -271,7 +271,7 @@ ShowArray(Array3);
 
 */
 
-
+//--------------------------------
 
 // int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
 // {
@@ -376,3 +376,99 @@ ShowArray(Array3);
 // }
 
 
+
+//--------------------------------
+
+// int[] RandomArray()
+// {
+// int[] array = new int[20];
+
+//     for(int i = 0; i < 20; i++)
+//     {
+//         array[i] = new Random().Next(1, 20 + 1);
+
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[] array)
+// {
+//     for(int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write($"{array[i]} ");
+//     }
+// Console.WriteLine();
+// }
+
+// void NumbEven(int[] array)
+// {
+//     int MaxNumber = array[0];
+//     for(int i = 0; i < array.Length; i++)
+//     {
+//         if(array[i] > MaxNumber)
+//         {
+//             MaxNumber = array[i];
+//         }
+//     }
+//     for(int i = 0; i < array.Length; i++)
+//     {
+//         for(int j = 0; j < array.Length; j++)
+//         {
+//             if (array[i] == array[j])
+//             {
+//                 MaxNumber++;
+//                 array[j] = new Random().Next(1, 20 + 1);
+//             }
+//         }
+//     }
+// }
+
+
+
+// int[] newArray = RandomArray();
+// Console.Write($"Array: ");
+// ShowArray(newArray);
+// NumbEven(newArray);
+// ShowArray(newArray);
+//----------------------------------------------------------------------------
+
+var notUniqueElements = 0;      //Счётчик не уникальных элементов
+            int[] myArray = { 1, 3, 1, 3, 4, 4, 5, 12, 14, 14, 11, 5, 8, 4};
+            for (int i = 1; i < myArray.Length; i++)
+            {
+                for (int a = i-1; a >= 0; a--)
+                {
+                    if (myArray[i] == myArray[a])   //Проверяем элемент на уникальность
+                    {
+                        notUniqueElements++;     //Если такой элемент уже есть, считаем его
+                        break;                             //И переходим к следующему элементу
+                    }
+                }
+            }
+            int[] uniqueArray = new int[myArray.Length - notUniqueElements]; // Массив уникальных элементов
+            uniqueArray[0] = myArray[0];   //Первый элемент уже уникальный, записываем его
+                for (int i = 1, b = 1; i < myArray.Length; i++)
+                {
+                    var uniqueElement = true;   //Для проверки на уникальность
+                    for (int a = i-1; a >= 0; a--)
+                    {
+                        if (myArray[i] == myArray[a])    //Делаем тоже самое, только для записи уникальных чисел в массив
+                        {
+                            uniqueElement = false;  //Если элемент не уникальный
+                            break;                          //Пропускаем его
+                        }
+                    }
+                    if (uniqueElement)                        //Если уникальный
+                    {
+                        uniqueArray[b] = myArray[i];    // Запись уникального элемента в массив
+                        b++; //Индекс для записи в массив уникальных чисел
+                    }
+                }
+            foreach (var el in uniqueArray)      // Вывод элементов на консоль
+            {
+                Console.WriteLine(el);
+            }
+ 
+            Console.ReadKey();
+
+         

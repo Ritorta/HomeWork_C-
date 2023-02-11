@@ -46,6 +46,60 @@ void ShowTripleArray3D(int[,,] array)
     }
 }
 
+void SortArray3D(int[,,] array, int layer, int rows, int colouns)
+{
+    int notUniqueElements = 0;      //Счётчик не уникальных элементов
+          
+            for (int i = 1; i < array.GetLength(0); i++)
+            {
+                for (int j = 1; j < array.GetLength(1); i++)
+                { 
+                    for (int k = 1; k < array.GetLength(2); i++)
+                    {
+                        for (int a = i - 1; a >= 0; a--)
+                        {
+                            if (array[i,j,k] == array[j,k,a])   //Проверяем элемент на уникальность
+                            {
+                                notUniqueElements++;     //Если такой элемент уже есть, считаем его
+                                break;                             //И переходим к следующему элементу
+                            }
+                        }
+                    }
+                }
+            }
+            int[,,] uniqueArray = new int[layer, rows, colouns  - notUniqueElements]; // Массив уникальных элементов
+            uniqueArray[layer, rows, colouns] = array[layer, rows, colouns];   //Первый элемент уже уникальный, записываем его
+                for (int i = 1; i < array.GetLength(0); i++)
+                {
+                    for (int j = 1; j < array.GetLength(1); i++)                       
+                   { 
+                        for (int k = 1, b = 1; k < array.GetLength(2); i++)
+                        {
+                          var uniqueElement = true;   //Для проверки на уникальность
+                            for (int a = i-1; a >= 0; a--)
+                            {
+                                if (array[i,j,k] == array[j,k,a])    //Делаем тоже самое, только для записи уникальных чисел в массив
+                                {
+                                    uniqueElement = false;  //Если элемент не уникальный
+                                    break;                          //Пропускаем его
+                                }
+                            }
+                            if (uniqueElement)                        //Если уникальный
+                            {
+                                uniqueArray[i,j,b] = array[i,j,k];    // Запись уникального элемента в массив
+                                b++; //Индекс для записи в массив уникальных чисел
+                            }
+                            
+                            
+                        }
+                    }
+                    
+                }   
+
+//return uniqueArray;
+}
+
+
 
 
 Console.Write("Enter quantity list: ");
@@ -63,10 +117,15 @@ else if(layer <= 3 && rows <= 6 && colouns <= 5)
 {
     int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
     ShowTripleArray3D(newArray);
+    SortArray3D(newArray, layer, rows, colouns);
+    ShowTripleArray3D(newArray);
+    
 }
 else if(layer <= 3 && rows <= 5 && colouns <= 6)
 {
     int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
+    ShowTripleArray3D(newArray);
+    SortArray3D(newArray, layer, rows, colouns);
     ShowTripleArray3D(newArray);
 }
 else
