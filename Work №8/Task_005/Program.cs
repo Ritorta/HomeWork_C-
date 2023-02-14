@@ -7,79 +7,26 @@ Task №5:
 11 16 15 06
 10 09 08 07
 
-*/
+
 // ---Вариант №1---
-// 
-
-// Console.Write("Enter length array: ");
-// int rows = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Enter quantity colouns: ");
-// int colouns = Convert.ToInt32(Console.ReadLine());
-
-
-// int[,] newArray = SpiralArray(rows, colouns);
-// ShowArray(newArray);
-
-
-// int[,] SpiralArray(int rows, int colouns)
-// {
-//     int[,] array = new int[rows, colouns];
-
- 
-//     int indexValue = 1;
-//     while(indexValue <= rows * colouns)
-//     {
-          
-//         for(int i = 0; i < rows / colouns; i++)
-//         {       
-//             for(int j = i; j < rows - i; j++)
-//             {
-//             array[i, j] = indexValue++;
-//             }
-
-//             for(int k = i + 1; k < colouns - i ; k++)
-//             {
-//             array[k, colouns - 1 - i] = indexValue++;
-//             }
-
-//             for(int j = rows - i - 2; j > i; j--)
-//             {
-//             array[rows - 1 - i, j] = indexValue++;
-//             }
-
-//             for(int k = colouns - 1 - i; k > i ; k--)
-//             {
-//             array[k, i] = indexValue++;
-//             }
-//         }
-//         indexValue++;
-//     }
-
-// return array;
-// }
-
-// void ShowArray(int[,] array)
-// {
-//     for(int i = 0; i < array.GetLength(0); i++)
-//     {
-//         for(int j = 0; j < array.GetLength(1); j++)
-//         {
-//             Console.Write(array[i,j] + " \t");
-//         }
-//         Console.WriteLine();
-//     }
-// }
-
+// Без цикла, длинный код, выполняет только до 10х10 и не может в неравный массив.
 
 Console.Write("Enter length array: ");
 int rows = Convert.ToInt32(Console.ReadLine());
 Console.Write("Enter quantity colouns: ");
 int colouns = Convert.ToInt32(Console.ReadLine());
 
+if(rows == colouns && rows <=10 && colouns <= 10)
 
-int[,] newArray = SpiralArray(rows, colouns);
-ShowArray(newArray);
-
+{
+    int[,] newArray = SpiralArray(rows, colouns);
+    ShowArray(newArray);
+}
+else
+{
+    Console.WriteLine("Error!");
+    Console.Write("Array very big, plese enter array not to 10x10 or array have unequal size.");
+}
 
 int[,] SpiralArray(int rows, int colouns)
 {
@@ -213,7 +160,65 @@ void ShowArray(int[,] array)
     }
 }
 
+*/
+// ---Вариант №2---
+// Не умеет в неравный массив.
+
+Console.Write("Enter length array: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter quantity colouns: ");
+int colouns = Convert.ToInt32(Console.ReadLine());
 
 
+int[,] newArray = SpiralArray(rows, colouns);
+ShowArray(newArray);
 
 
+int[,] SpiralArray(int rows, int colouns)
+{
+    int[,] array = new int[rows, colouns];
+
+    int indexValue = 1;
+    int n = rows;
+    int m = colouns; 
+          
+   
+            for(int i = 0; i < n; i++)
+            {       
+                for(int j = i; j < n - i; j++)
+                {
+                array[i, j] = indexValue++;
+                }
+
+                for(int k = i + 1; k < m - i ; k++)
+                {
+                array[k, m - 1 - i] = indexValue++;
+                }
+
+                for(int j = n - i - 2; j > i; j--)
+                {
+                array[n - 1 - i, j] = indexValue++;
+                }
+
+                for(int k = m - 1 - i; k > i ; k--)
+                {
+                array[k, i] = indexValue++;
+                }
+            }
+       
+   
+
+return array;
+}
+
+void ShowArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + " \t");
+        }
+        Console.WriteLine();
+    }
+}

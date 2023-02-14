@@ -11,17 +11,53 @@ Task №4:
 // ---Вариант №1---
 // 
 
+Console.Write("Enter quantity list: ");
+int layer = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter quantity rows: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter quantity colouns: ");
+int colouns = Convert.ToInt32(Console.ReadLine());
+
+if(layer == 0 || rows == 0 || colouns == 0)
+{
+    Console.WriteLine("Error!");
+}
+else if(layer <= 3 && rows <= 6 && colouns <= 5)
+{
+    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
+    ShowTripleArray3D(newArray);
+    // SortArray3D(newArray);
+    CheakArray3D(newArray);
+    
+}
+else if(layer <= 3 && rows <= 5 && colouns <= 6)
+{
+    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
+    ShowTripleArray3D(newArray);
+    // SortArray3D(newArray);
+    // ShowTripleArray3D(newArray);
+    CheakArray3D(newArray);
+}
+else
+{
+    Console.WriteLine("Error!");
+}
+
 int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
 {
     int[,,] array = new int[layer,rows,colouns];
     
+    int num = array [0,0,0];
+
     for(int i = 0; i < layer; i++)
     {
         for(int j = 0; j < rows; j++)
         {
             for(int k = 0; k < colouns; k++)
             {
+
                 array[i,j,k] = new Random().Next(10,99 +1);
+
             }
         }
     } 
@@ -45,90 +81,36 @@ void ShowTripleArray3D(int[,,] array)
         Console.WriteLine();
     }
 }
-
-void SortArray3D(int[,,] array)
-{
-    int notUniqueElements = 0;      //Счётчик не уникальных элементов
           
-            for (int i = 1; i < array.GetLength(0); i++)
+void CheakArray3D(int[,,] array) 
+{
+
+int num = 0;
+
+    for(int i = 0; i < array.GetLength(0); i++)
+    {    
+        for(int j = 0 ; j < array.GetLength(1); j++)
+        {
+            for(int k = 0; k < array.GetLength(2); k++)
             {
-                for (int j = 1; j < array.GetLength(1); i++)
-                { 
-                    for (int k = 1; k < array.GetLength(2); i++)
-                    {
-                        for (int a = k - 1; a >= 0; a--)
-                        {
-                            if (array[i,j,k] == array[j,k,a])   //Проверяем элемент на уникальность
-                            {
-                                notUniqueElements++;     //Если такой элемент уже есть, считаем его
-                                break;                             //И переходим к следующему элементу
-                            }
-                        }
-                    }
+                num = k;
+
+                for(int g = k + 1; g < array.GetLength(2); g++)
+                {
+                    while(array[i,j,k] == num)
+    
+                {
+                    num++;
+                    array[i,j,k] = num;
+                }
                 }
             }
-            int[,,] uniqueArray = new int[array.GetLength(0), array.GetLength(1), array.GetLength(2)  - notUniqueElements]; // Массив уникальных элементов
-            uniqueArray[0, 0, 0] = array[0, 0, 0];   //Первый элемент уже уникальный, записываем его
-                for (int i = 1; i < array.GetLength(0); i++)
-                {
-                    for (int j = 1; j < array.GetLength(1); i++)                       
-                   { 
-                        for (int k = 1, b = 1; k < array.GetLength(2); i++)
-                        {
-                          var uniqueElement = true;   //Для проверки на уникальность
-                            for (int a = i - 1; a >= 0; a--)
-                            {
-                                if (array[i,j,k] == array[j,k,a])    //Делаем тоже самое, только для записи уникальных чисел в массив
-                                {
-                                    uniqueElement = false;  //Если элемент не уникальный
-                                    break;                          //Пропускаем его
-                                }
-                            }
-                            if (uniqueElement)                        //Если уникальный
-                            {
-                                uniqueArray[i,j,b] = array[i,j,k];    // Запись уникального элемента в массив
-                                b++; //Индекс для записи в массив уникальных чисел
-                            }
-                            
-                            
-                        }
-                    }
-                    
-                }   
+        }    
+    }
 
-//return uniqueArray;
 }
 
 
 
 
-Console.Write("Enter quantity list: ");
-int layer = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter quantity rows: ");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter quantity colouns: ");
-int colouns = Convert.ToInt32(Console.ReadLine());
 
-if(layer == 0 || rows == 0 || colouns == 0)
-{
-    Console.WriteLine("Error!");
-}
-else if(layer <= 3 && rows <= 6 && colouns <= 5)
-{
-    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
-    ShowTripleArray3D(newArray);
-    SortArray3D(newArray);
-    ShowTripleArray3D(newArray);
-    
-}
-else if(layer <= 3 && rows <= 5 && colouns <= 6)
-{
-    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
-    ShowTripleArray3D(newArray);
-    SortArray3D(newArray);
-    ShowTripleArray3D(newArray);
-}
-else
-{
-    Console.WriteLine("Error!");
-}
