@@ -169,9 +169,17 @@ int rows = Convert.ToInt32(Console.ReadLine());
 Console.Write("Enter quantity colouns: ");
 int colouns = Convert.ToInt32(Console.ReadLine());
 
+if(rows == colouns)
 
-int[,] newArray = SpiralArray(rows, colouns);
-ShowArray(newArray);
+{
+    int[,] newArray = SpiralArray(rows, colouns);
+    ShowArray(newArray);
+}
+else
+{
+    Console.WriteLine("Error!");
+    Console.Write("Array have unequal size.");
+}
 
 
 int[,] SpiralArray(int rows, int colouns)
@@ -179,34 +187,29 @@ int[,] SpiralArray(int rows, int colouns)
     int[,] array = new int[rows, colouns];
 
     int indexValue = 1;
-    int n = rows;
-    int m = colouns; 
-          
-   
-            for(int i = 0; i < n; i++)
+             
+            for(int i = 0; i < rows; i++)
             {       
-                for(int j = i; j < n - i; j++)
+                for(int j = i; j < rows - i; j++)
                 {
                 array[i, j] = indexValue++;
                 }
 
-                for(int k = i + 1; k < m - i ; k++)
+                for(int k = i + 1; k < colouns - i ; k++)
                 {
-                array[k, m - 1 - i] = indexValue++;
+                array[k, colouns - 1 - i] = indexValue++;
                 }
 
-                for(int j = n - i - 2; j > i; j--)
+                for(int j = rows - i - 2; j > i; j--)
                 {
-                array[n - 1 - i, j] = indexValue++;
+                array[rows - 1 - i, j] = indexValue++;
                 }
 
-                for(int k = m - 1 - i; k > i ; k--)
+                for(int k = colouns - 1 - i; k > i ; k--)
                 {
                 array[k, i] = indexValue++;
                 }
             }
-       
-   
 
 return array;
 }
