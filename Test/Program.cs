@@ -21,7 +21,7 @@
 
  
 
-//--------------------------------
+// уникальные числа  мой код 1--------------------------------
 
 // int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
 // {
@@ -60,25 +60,27 @@
 
 // int[,,] CheckUniquenessNumbers(int[,,] array)
 // {
-//     int maxNumber = 0;
+//     int maxNumber = array[0,0,0];
+
 //     for(int i = 0; i < array.GetLength(0); i++)
 //     {
 //         for(int j = 0; j < array.GetLength(1); j++)
 //         {
 //             for(int k = 0; k < array.GetLength(2); k++)
 //             {   
-                
 //                 if(array[i,j,k] > maxNumber)
 //                 {
 //                     maxNumber = array[i,j,k];
 //                 }
-//                     for(int g = 0; g < array.GetLength(2); g++)
+//                     for(int q = j + 1; q < array.GetLength(1); q++)
 //                     {
-//                         if(array[i,j,k] == array[i,j,g])
-//                         {               
-                            
-//                             maxNumber++;
-//                             array[i,j,g] = maxNumber;
+//                         for(int g = k + 1; g < array.GetLength(2); g++)
+//                         {
+//                             if(array[i,j,k] == array[i,q,g])
+//                             {               
+//                                 maxNumber = maxNumber + 1;
+//                                 array[i,q,g] = maxNumber;
+//                             }
 //                         }
 //                     }
                     
@@ -106,7 +108,7 @@
 // else if(layer <= 3 && rows <= 6 && colouns <= 5)
 // {
 //     int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
-//        ShowTripleArray3D(newArray);
+//     //    ShowTripleArray3D(newArray);
 //         CheckUniquenessNumbers(newArray);
 //         ShowTripleArray3D(newArray);
      
@@ -115,9 +117,9 @@
 // {
 //     int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
 
-//     ShowTripleArray3D(newArray);
+//     // ShowTripleArray3D(newArray);
 //     CheckUniquenessNumbers(newArray);
-//         ShowTripleArray3D(newArray);
+//     ShowTripleArray3D(newArray);
      
 // }
 // else
@@ -127,15 +129,15 @@
 
 
 
-//--------------------------------
+//уникальные числа мой код 2--------------------------------
 
 // int[] RandomArray()
 // {
-// int[] array = new int[20];
+// int[] array = new int[10];
 
-//     for(int i = 0; i < 20; i++)
+//     for(int i = 0; i < 10; i++)
 //     {
-//         array[i] = new Random().Next(1, 20 + 1);
+//         array[i] = new Random().Next(1, 5 + 1);
 
 //     }
 //     return array;
@@ -153,6 +155,7 @@
 // void NumbEven(int[] array)
 // {
 //     int MaxNumber = array[0];
+//     int temp = 0;
 //     for(int i = 0; i < array.Length; i++)
 //     {
 //         if(array[i] > MaxNumber)
@@ -162,13 +165,16 @@
 //     }
 //     for(int i = 0; i < array.Length; i++)
 //     {
-//         for(int j = 0; j < array.Length; j++)
+//         for(int j = i + 1; j < array.Length; j++)
 //         {
-//             if (array[i] == array[j])
-//             {
-//                 MaxNumber++;
-//                 array[j] = new Random().Next(1, 20 + 1);
-//             }
+            
+//                 if(array[i] == array[j])
+//                 {
+//                 // MaxNumber++;   
+//                 // array[j] = MaxNumber;
+//                 // array[j] = new Random().Next(1, 5 + 1);
+                                
+//                 }
 //         }
 //     }
 // }
@@ -176,17 +182,17 @@
 
 
 // int[] newArray = RandomArray();
-// Console.Write($"Array: ");
+// Console.Write("");
 // ShowArray(newArray);
 // NumbEven(newArray);
 // ShowArray(newArray);
-//----------------------------------------------------------------------------
+//уникальные числа пример 1----------------------------------------------------------------------------
 
 // var notUniqueElements = 0;      //Счётчик не уникальных элементов
-//             int[] myArray = new int[99];
-//               for(int i = 0; i < 99; i++)
+//             int[] myArray = new int[10];
+//               for(int i = 0; i < 10; i++)
 //     {
-//         myArray[i] = new Random().Next(1, 99 + 1);
+//         myArray[i] = new Random().Next(1, 5 + 1);
 
 //     }
     
@@ -223,11 +229,11 @@
 //                 }
 //             foreach (var el in uniqueArray)      // Вывод элементов на консоль
 //             {
-//                 Console.WriteLine($" {el}  ");
+//                 Console.Write(el + "\t" );
 //             }
  
            
-//------------------------------------------------------------------
+//уникальные числа пример 2------------------------------------------------------------------
         //   var notUniqueElements = 0;      //Счётчик не уникальных элементов
         //     int[] myArray = { 1, 3, 1, 3, 4, 4, 5, 12, 14, 14, 11, 5, 8, 4};
         //     for (int i = 1; i < myArray.Length; i++)
@@ -267,92 +273,11 @@
  
         //     Console.ReadKey();
 
-        //     //-------------------------------------
+            
+// Спирали пример 1--------------------------------
 
 
-
-// Console.WriteLine("Введите размер массива");
-// int size = Convert.ToInt32(Console.ReadLine());
-
-// int[,] nums = new int[size, size];
-
-// int num = 1;
-// int i = 0;
-// int j = 0;
-
-// while (num <= size * size)
-// {
-//     nums[i, j] = num;
-//     if (i <= j + 1 && i + j < size - 1)
-//         ++j;
-//     else if (i < j && i + j >= size - 1)
-//         ++i;
-//     else if (i >= j && i + j > size - 1)
-//         --j;
-//     else
-//         --i;
-//     ++num;
-// }
-
-// PrintArray(nums);
-
-// void PrintArray(int[,] array)
-// {
-//     for (int i = 0; i < array.GetLength(0); i++)
-//     {
-//         Console.Write("[ ");
-//         for (int j = 0; j < array.GetLength(1); j++)
-//         {
-//             Console.Write(array[i, j] + " \t");
-//         }
-//         Console.Write("]");
-//         Console.WriteLine("");
-//     }
-// }
-// ----------------------------------------------------
-// int len = 6;
-// int[,] table = new int[len, len];
-// FillArraySpiral(table, len);
-// PrintArray(table);
-
-
-// // Функция заполнения массива по спирали начиная с 1
-// void FillArraySpiral(int[,] array, int n)
-// {
-//     int i = 0, j = 0;
-//     int value = 1;
-//     for (int e = 0; e < n * n; e++)
-//     {
-//         int k = 0;
-//         do { array[i, j++] = value++; } 
-//         while (++k < n - 1);
-//         for (k = 0; k < n - 1; k++) array[i++, j] = value++;
-//         for (k = 0; k < n - 1; k++) array[i, j--] = value++;
-//         for (k = 0; k < n - 1; k++) array[i--, j] = value++;
-//         ++i; ++j;
-//         n = n < 2 ? 0 : n - 2;
-//     }
-// }
-
-// //  Функция вывода двумерного массива в терминал
-// void PrintArray(int[,] array)
-// {
-//     for (int i = 0; i < array.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < array.GetLength(1); j++)
-//         {
-//             if (array[i, j] < 10)
-//             {
-//                 Console.Write("0" + array[i, j]);
-//                 Console.Write(" ");
-//             }
-//             else Console.Write(array[i, j] + " ");
-//         }
-//         Console.WriteLine();
-//     }
-// }
-
-//  const int n = 6;
+//         const int n = 6;
 //             const int m = 8;
 //             int[,] matrix = new int[n, m];
  
@@ -435,63 +360,91 @@
 // Print3DArray(array3D);
 // System.Console.WriteLine();
 
-//-------------------------------------
-
-Console.Write("Enter length array: ");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter quantity colouns: ");
-int colouns = Convert.ToInt32(Console.ReadLine());
 
 
-int[,] newArray = SpiralArray(rows, colouns);
-ShowArray(newArray);
+// Спирали пример 1--------------------------------
+
+// Console.WriteLine("Введите размер массива");
+// int size = Convert.ToInt32(Console.ReadLine());
+
+// int[,] nums = new int[size, size];
+
+// int num = 1;
+// int i = 0;
+// int j = 0;
+
+// while (num <= size * size)
+// {
+//     nums[i, j] = num;
+//     if (i <= j + 1 && i + j < size - 1)
+//         ++j;
+//     else if (i < j && i + j >= size - 1)
+//         ++i;
+//     else if (i >= j && i + j > size - 1)
+//         --j;
+//     else
+//         --i;
+//     ++num;
+// }
+
+// PrintArray(nums);
+
+// void PrintArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         Console.Write("[ ");
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j] + " \t");
+//         }
+//         Console.Write("]");
+//         Console.WriteLine("");
+//     }
+// }
+// спирали пример 2 ----------------------------------------
+// int len = 6;
+// int[,] table = new int[len, len];
+// FillArraySpiral(table, len);
+// PrintArray(table);
 
 
-int[,] SpiralArray(int rows, int colouns)
-{
-    int[,] array = new int[rows, colouns];
+// // Функция заполнения массива по спирали начиная с 1
+// void FillArraySpiral(int[,] array, int n)
+// {
+//     int i = 0, j = 0;
+//     int value = 1;
+//     for (int e = 0; e < n * n; e++)
+//     {
+//         int k = 0;
+//         do { array[i, j++] = value++; } 
+//         while (++k < n - 1);
+//         for (k = 0; k < n - 1; k++) array[i++, j] = value++;
+//         for (k = 0; k < n - 1; k++) array[i, j--] = value++;
+//         for (k = 0; k < n - 1; k++) array[i--, j] = value++;
+//         ++i; ++j;
+//         n = n < 2 ? 0 : n - 2;
+//     }
+// }
 
-    int indexValue = 1;
-    int n = rows;
-    int m = colouns; 
-          
-   
-            for(int i = 0; i < n; i++)
-            {       
-                for(int j = i; j < n - i; j++)
-                {
-                array[i, j] = indexValue++;
-                }
+// //  Функция вывода двумерного массива в терминал
+// void PrintArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             if (array[i, j] < 10)
+//             {
+//                 Console.Write("0" + array[i, j]);
+//                 Console.Write(" ");
+//             }
+//             else Console.Write(array[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+//-------------------------------------------------------
+    
 
-                for(int k = i + 1; k < m - i ; k++)
-                {
-                array[k, m - 1 - i] = indexValue++;
-                }
-
-                for(int j = n - i - 2; j > i; j--)
-                {
-                array[n - 1 - i, j] = indexValue++;
-                }
-
-                for(int k = m - 1 - i; k > i ; k--)
-                {
-                array[k, i] = indexValue++;
-                }
-            }
-       
-   
-
-return array;
-}
-
-void ShowArray(int[,] array)
-{
-    for(int i = 0; i < array.GetLength(0); i++)
-    {
-        for(int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i,j] + " \t");
-        }
-        Console.WriteLine();
-    }
-}
+https://stackovergo.com/ru/q/599089/replace-duplicate-values-in-array-with-new-randomly-generated-values
