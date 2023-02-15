@@ -26,77 +26,58 @@ else if(layer <= 3 && rows <= 6 && colouns <= 5)
 {
     int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
     ShowTripleArray3D(newArray);
-    
-    // CheakArray3D(newArray);
+    //CheakArray3D(newArray);
+    //ShowTripleArray3D(newArray);
     
 }
 else if(layer <= 3 && rows <= 5 && colouns <= 6)
 {
     int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
     ShowTripleArray3D(newArray);
-    
-    
-    // CheakArray3D(newArray);
+    //CheakArray3D(newArray);
+    //ShowTripleArray3D(newArray);
 }
 else
 {
     Console.WriteLine("Error!");
 }
 
-// int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
-// {
-//     int[,,] array = new int[layer,rows,colouns];
-    
-//     for(int i = 0; i < layer; i++)
-//     {
-//         for(int j = 0; j < rows; j++)
-//         {
-//             for(int k = 0; k < colouns; k++)
-//             {
-
-//                 array[i,j,k] = new Random().Next(10,99 +1);
-
-//             }
-//         }
-//     } 
-//     return array;
-// }
-
 int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
 {
     int[,,] array = new int[layer,rows,colouns];
     
+bool Check;
+
     for(int i = 0; i < layer; i++)
     {
         for(int j = 0; j < rows; j++)
         {
-            for(int k = 0; k < colouns; k++)
+            for(int k = 0; k < colouns;)
             {
-                array[i,j,k] = new Random().Next(10,99 +1);
+                Check = false;
+                int newRand =  new Random().Next(10,99 +1);
+                array[i,j,k] = newRand;
 
-                int maxNumber = array[0,0,0];
-                int num = array[i,j,k];
+                for(int q = 0; k < i; q++)
+                {
+                 if(array[i,j,k] == newRand)   
+                 {
+                    Check = true;
 
-                    if(array[i,j,k] > maxNumber)
-                    {
-                        maxNumber = array[i,j,k];
-                    }
-
-                for(int q = k + 1; q < array.GetLength(2); q++)
-                {   
-                        if(array[i,j,k] == array[i,j,q])
-                        {
-                            num = num + 1;
-                            array[i,j,q] = maxNumber;
-                        }
+                 }
                 }
-                
-                    
+            if(!Check)
+            {
+                array[i,j,k] = newRand;
+                k++;
             }
+            }    
         }
     } 
     return array;
 }
+
+
 
 
 void ShowTripleArray3D(int[,,] array)
@@ -116,11 +97,37 @@ void ShowTripleArray3D(int[,,] array)
         Console.WriteLine();
     }
 }
+
+// int[,,] CheakArray3D(int[,,] array) 
+// {
+//     for(int i = 0; i < array.GetLength(0); i++)
+//     {    
+//         for(int j = 0 ; j < array.GetLength(1); j++)
+//         {
+//             for(int k = 0; k < array.GetLength(2); k++)
+//             {
+//                 int arr = array[i,j,k];
+                
+//                 for(int q = i + 1; q < array.GetLength(2); q++)
+
+//                 if(arr == array[i,j,q])
+//                 {
+//                     arr++;
+//                     array[i,j,k] = new Random().Next(10,99 +1);    
+//                 }
+                
+               
+//             }
+//         }
+//     }
+
+// return array;
+
+// }
           
 // int[,,] CheakArray3D(int[,,] array) 
 // {
 
-// int num = array[0,0,0];
 // int numArray = 0;
 
 //     for(int i = 0; i < array.GetLength(0); i++)
@@ -129,16 +136,24 @@ void ShowTripleArray3D(int[,,] array)
 //         {
 //             for(int k = 0; k < array.GetLength(2); k++)
 //             {
-//                 num = array[i,j,k];
+//                int currentarray = array[i,j,k];
 
-//                 for(int q = k + 1; q < array.GetLength(2); q++)
-//                 {
-//                     if(array[i,j,k] == array[i,j,q])
+//                bool Equals = false;
+
+//                for(int q = 0; q < array.GetLength(2); q++)
+//                {
+//                     if(k == q)
 //                     {
-//                         num = num + 1;
-//                         array[i,j,q] = num;
+//                         continue;
 //                     }
-//                 }
+//                     if(currentarray == array[i,j,q] && k != q)
+//                     {
+//                         Equals = true;
+//                     }
+
+                    
+//                }
+                
 //             }
 //         }    
 //     }

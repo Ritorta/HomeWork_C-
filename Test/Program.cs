@@ -528,26 +528,63 @@
 //     Console.ReadLine();
 
 //---------------------------------------
-int GetUniqNumber(int[] array)
-{
-    int nextNumber;
-    do
-    {
-        nextNumber = new Random().Next(10, 100);
-    }
-    while (array[nextNumber] != 0);
-    array[nextNumber] = 1;
-    return nextNumber;
-}
+// int GetUniqNumber(int[] array)
+// {
+//     int nextNumber;
+//     do
+//     {
+//         nextNumber = new Random().Next(10, 100);
+//     }
+//     while (array[nextNumber] != 0);
+//     array[nextNumber] = 1;
+//     return nextNumber;
+// }
 
-int[] DoubleRandomArray(int length)
+// int[] DoubleRandomArray(int length)
+// {
+// int[] array = new int[length];
+
+//     for(int i = 0; i < length; i++)
+//     {
+//         array[i] = GetUniqNumber(array);
+      
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[] array)
+// {
+//     for(int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+// Console.WriteLine();
+// }
+
+// Console.Write("f");
+// int length = Convert.ToInt32(Console.ReadLine());
+
+// int[] R = DoubleRandomArray(length);
+// ShowArray(R);
+
+
+Console.Write("Enter the size of the array: ");
+int length = Convert.ToInt32(Console.ReadLine());
+
+int[] newArray = RandomArray(length);
+ShowArray(newArray);
+NumbEven(newArray);
+ShowArray(newArray);
+
+
+int[] RandomArray(int length)
 {
 int[] array = new int[length];
 
     for(int i = 0; i < length; i++)
     {
-        array[i] = GetUniqNumber(array);
-      
+        array[i] = new Random().Next(1, 5 + 1);
+
     }
     return array;
 }
@@ -556,13 +593,26 @@ void ShowArray(int[] array)
 {
     for(int i = 0; i < array.Length; i++)
     {
-        Console.Write(array[i] + " ");
+        Console.Write($"{array[i]} ");
     }
 Console.WriteLine();
 }
 
-Console.Write("f");
-int length = Convert.ToInt32(Console.ReadLine());
+void NumbEven(int[] array)
+{
 
-int[] R = DoubleRandomArray(length);
-ShowArray(R);
+    for(int i = 0; i < array.Length; i++)
+    {
+        int count = array[i];
+        for(int j = i + 1; j < array.Length; j++)
+        {
+            if(array[i] == array[j])
+            {
+                count++;
+                array[i] = count;
+            }
+        }
+    }
+
+
+}
