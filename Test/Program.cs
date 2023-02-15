@@ -568,51 +568,136 @@
 // ShowArray(R);
 
 
-Console.Write("Enter the size of the array: ");
-int length = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Enter the size of the array: ");
+// int length = Convert.ToInt32(Console.ReadLine());
 
-int[] newArray = RandomArray(length);
-ShowArray(newArray);
-NumbEven(newArray);
-ShowArray(newArray);
+// int[] newArray = RandomArray(length);
+// ShowArray(newArray);
+// NumbEven(newArray);
+// ShowArray(newArray);
 
 
-int[] RandomArray(int length)
+// int[] RandomArray(int length)
+// {
+// int[] array = new int[length];
+
+//     for(int i = 0; i < length; i++)
+//     {
+//         array[i] = new Random().Next(1, 5 + 1);
+
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[] array)
+// {
+//     for(int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write($"{array[i]} ");
+//     }
+// Console.WriteLine();
+// }
+
+// void NumbEven(int[] array)
+// {
+
+//     for(int i = 0; i < array.Length; i++)
+//     {
+//         int count = array[i];
+//         for(int j = i + 1; j < array.Length; j++)
+//         {
+//             if(array[i] == array[j])
+//             {
+//                 count++;
+//                 array[i] = count;
+//             }
+//         }
+//     }
+
+
+// }
+Console.Write("Enter quantity list: ");
+int layer = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter quantity rows: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter quantity colouns: ");
+int colouns = Convert.ToInt32(Console.ReadLine());
+
+if (layer == 0 || rows == 0 || colouns == 0)
 {
-int[] array = new int[length];
+    Console.WriteLine("Error!");
+}
+else if (layer <= 3 && rows <= 6 && colouns <= 5)
+{
+    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
+    ShowTripleArray3D(newArray);
+    //CheakArray3D(newArray);
+    //ShowTripleArray3D(newArray);
 
-    for(int i = 0; i < length; i++)
+}
+else if (layer <= 3 && rows <= 5 && colouns <= 6)
+{
+    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
+    ShowTripleArray3D(newArray);
+    //CheakArray3D(newArray);
+    //ShowTripleArray3D(newArray);
+}
+else
+{
+    Console.WriteLine("Error!");
+}
+
+int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
+{
+    int[,,] array = new int[layer, rows, colouns];
+
+    for (int i = 0; i < layer; i++)
     {
-        array[i] = new Random().Next(1, 5 + 1);
+        for (int j = 0; j < rows; j++)
+        {
+            for (int k = 0; k < colouns; )
+            {
+                bool Check = false;
+                int newRand = new Random().Next(10, 99 + 1);
+                array[i, j, k] = newRand;
 
+                for (int q = 0; k < i;)
+                {
+                    if (array[i, j, k] == newRand)
+                    {
+                        Check = true;
+                        break;
+                    }
+                }
+
+            if (!Check)
+            {
+                array[i, j, k] = newRand;
+                k++;
+            }
+            }
+        }
     }
     return array;
 }
 
-void ShowArray(int[] array)
-{
-    for(int i = 0; i < array.Length; i++)
-    {
-        Console.Write($"{array[i]} ");
-    }
-Console.WriteLine();
-}
 
-void NumbEven(int[] array)
-{
 
-    for(int i = 0; i < array.Length; i++)
+
+void ShowTripleArray3D(int[,,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        int count = array[i];
-        for(int j = i + 1; j < array.Length; j++)
+        Console.WriteLine($"---Layer №: {(i + 1)}");
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            if(array[i] == array[j])
+            for (int k = 0; k < array.GetLength(2); k++)
             {
-                count++;
-                array[i] = count;
+                Console.Write(" " + array[i, j, k] + " ");
+                Console.Write($"({i},{j},{k})");
             }
+            Console.WriteLine();
         }
+        Console.WriteLine();
     }
-
-
 }

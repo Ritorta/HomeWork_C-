@@ -44,36 +44,36 @@ else
 
 int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
 {
-    int[,,] array = new int[layer,rows,colouns];
-    
-bool Check;
+    int[,,] array = new int[layer, rows, colouns];
 
-    for(int i = 0; i < layer; i++)
+    bool Check;
+
+    for (int i = 0; i < layer; i++)
     {
-        for(int j = 0; j < rows; j++)
+        for (int j = 0; j < rows; j++)
         {
-            for(int k = 0; k < colouns;)
+            for (int k = 0; k < colouns;)
             {
                 Check = false;
-                int newRand =  new Random().Next(10,99 +1);
-                array[i,j,k] = newRand;
+                int newRand = new Random().Next(10, 99 + 1);
+               // array[i, j, k] = newRand;
 
-                for(int q = 0; k < i; q++)
+                for (int q = 0; q < i; q++)
                 {
-                 if(array[i,j,k] == newRand)   
-                 {
-                    Check = true;
-
-                 }
+                    if (array[i, j, k] == newRand)
+                    {
+                        Check = true;
+                        break;
+                    }
                 }
-            if(!Check)
-            {
-                array[i,j,k] = newRand;
-                k++;
+                if (!Check)
+                {
+                    array[i, j, k] = newRand;
+                    k++;
+                }
             }
-            }    
         }
-    } 
+    }
     return array;
 }
 
