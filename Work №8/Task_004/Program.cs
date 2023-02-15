@@ -9,7 +9,7 @@ Task №4:
 
 */
 // ---Вариант №1---
-// 
+// Так вроде работает.
 
 Console.Write("Enter quantity list: ");
 int layer = Convert.ToInt32(Console.ReadLine());
@@ -26,16 +26,13 @@ else if(layer <= 3 && rows <= 6 && colouns <= 5)
 {
     int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
     ShowTripleArray3D(newArray);
-    //CheakArray3D(newArray);
-    //ShowTripleArray3D(newArray);
-    
+        
 }
 else if(layer <= 3 && rows <= 5 && colouns <= 6)
 {
     int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
     ShowTripleArray3D(newArray);
-    //CheakArray3D(newArray);
-    //ShowTripleArray3D(newArray);
+    
 }
 else
 {
@@ -52,15 +49,15 @@ int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
     {
         for (int j = 0; j < rows; j++)
         {
-            for (int k = 0; k < colouns;)
+            for (int k = 0; k < colouns; )
             {
                 Check = false;
                 int newRand = new Random().Next(10, 99 + 1);
                // array[i, j, k] = newRand;
 
-                for (int q = 0; q < i; q++)
+                for (int q = 0; q < k; q++)
                 {
-                    if (array[i, j, k] == newRand)
+                    if (array[i, j, q] == newRand)
                     {
                         Check = true;
                         break;
@@ -97,69 +94,4 @@ void ShowTripleArray3D(int[,,] array)
         Console.WriteLine();
     }
 }
-
-// int[,,] CheakArray3D(int[,,] array) 
-// {
-//     for(int i = 0; i < array.GetLength(0); i++)
-//     {    
-//         for(int j = 0 ; j < array.GetLength(1); j++)
-//         {
-//             for(int k = 0; k < array.GetLength(2); k++)
-//             {
-//                 int arr = array[i,j,k];
-                
-//                 for(int q = i + 1; q < array.GetLength(2); q++)
-
-//                 if(arr == array[i,j,q])
-//                 {
-//                     arr++;
-//                     array[i,j,k] = new Random().Next(10,99 +1);    
-//                 }
-                
-               
-//             }
-//         }
-//     }
-
-// return array;
-
-// }
-          
-// int[,,] CheakArray3D(int[,,] array) 
-// {
-
-// int numArray = 0;
-
-//     for(int i = 0; i < array.GetLength(0); i++)
-//     {    
-//         for(int j = 0 ; j < array.GetLength(1); j++)
-//         {
-//             for(int k = 0; k < array.GetLength(2); k++)
-//             {
-//                int currentarray = array[i,j,k];
-
-//                bool Equals = false;
-
-//                for(int q = 0; q < array.GetLength(2); q++)
-//                {
-//                     if(k == q)
-//                     {
-//                         continue;
-//                     }
-//                     if(currentarray == array[i,j,q] && k != q)
-//                     {
-//                         Equals = true;
-//                     }
-
-                    
-//                }
-                
-//             }
-//         }    
-//     }
-// return array;
-// }
-
-
-
 
