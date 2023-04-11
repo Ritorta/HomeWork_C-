@@ -76,7 +76,7 @@ ShowArray2D(newArray);
 
 
 // ---Вариант №2---
-// Метод отбора
+// Сортировка отбора
 
 int[,] CreateArray2D()
 {
@@ -149,7 +149,7 @@ ShowArray2D(newArray);
 
 
 // // ---Вариант №3---
-// // Метод вставками
+// // Сортировка вставками
 
 int[,] CreateArray2D()
 {
@@ -208,7 +208,14 @@ ShowArray2D(newArray);
 */
 
 // // ---Вариант №4---
-// // Метод 
+// // Сортировка подсчётом
+
+
+
+int[,] newArray = CreateArray2D();
+ShowArray2D(newArray);
+SortArray2D(newArray);
+ShowArray2D(newArray);
 
 int[,] CreateArray2D()
 {
@@ -229,59 +236,157 @@ void ShowArray2D(int[,] array)
     {
         for(int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write(array[i,j] + "\t");
+            Console.Write(array[i, j] + "\t");
         }
         Console.WriteLine();
     }
     Console.WriteLine();
 }
 
+
 void SortArray2D(int[,] array)
 {
-    int index = 1;
-    int nextIndex = index + 1;
-    int temp = 0;
+    int[,] count = new int[101, 101];
 
     for(int i = 0; i < array.GetLength(0); i++)
     {
-       
         for(int j = 0; j < array.GetLength(1); j++)
         {
-        
-            while(index < array.GetLength(1))  
-            {
-                if(array[i, index - 1] > array[i, index]) 
-                {
-                    index = nextIndex;     
-                    nextIndex++;
-                }
-                else
-                {
-                    temp = array[i, index - 1];
-                    array[i, index - 1] = array[i, index];
-                    array[i, index] = temp;
-                    index = index - 1;
-
-                    if(index == 0)
-                    {
-                        index = nextIndex;     
-                        nextIndex++;
-                    }
-                    
-                }
-            }
-           
+            count[i, j]++;
         }
-               
     }
-  
+    
+    int index = 0;
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < count[i, j]; j++)
+        {
+                array[i, index] = j;
+                index++;   
+        }
+    }  
+
 }
 
 
-int[,] newArray = CreateArray2D();
-ShowArray2D(newArray);
-SortArray2D(newArray);
-ShowArray2D(newArray);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // ---Вариант №---
+// // Сортировка Гномом
+
+
+// int[,] CreateArray2D()
+// {
+//     int[,] array = new int[3,4];
+//         for(int i = 0; i < 3; i++)
+//         {
+//             for(int j = 0; j < 4; j++)
+//             {
+//                 array[i,j] = new Random().Next(1,100 + 1);
+//             }
+//         }
+// return array; 
+// }
+
+// void ShowArray2D(int[,] array)
+// {
+//     for(int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for(int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i,j] + "\t");
+//         }
+//         Console.WriteLine();
+//     }
+//     Console.WriteLine();
+// }
+
+// void SortArray2D(int[,] array)
+// {
+//     int index = 1;
+//     int nextIndex = index + 1;
+//     int temp = 0;
+
+//     for(int i = 0; i < array.GetLength(0); i++)
+//     {
+       
+//         for(int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for(int k = 0; k < array.GetLength(1); k++ )
+//            { 
+//             while(index < array.GetLength(1))  
+//             {
+//                 if(array[i, index - 1] > array[i, index]) 
+//                 {
+//                     index = nextIndex;     
+//                     nextIndex++;
+//                 }
+//                 else
+//                 {
+//                     temp = array[i, index - 1];
+//                     array[i, index - 1] = array[i, index];
+//                     array[i, index] = temp;
+//                     index = index - 1;
+
+//                     if(index == 0)
+//                     {
+//                         index = nextIndex;     
+//                         nextIndex++;
+//                     }
+                    
+//                 }
+//             }
+//             }
+           
+//         }
+               
+//     }
+  
+// }
+
+
+// int[,] newArray = CreateArray2D();
+// ShowArray2D(newArray);
+// SortArray2D(newArray);
+// ShowArray2D(newArray);
+
+//----------------------------------------------------
 
 // void SortArray2D(int[,] array)
 // {

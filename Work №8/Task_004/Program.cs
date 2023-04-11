@@ -49,7 +49,7 @@ int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
     {
         for (int j = 0; j < rows; j++)
         {
-            for (int k = 0; k < colouns; )
+            for (int k = 0; k < colouns; k++)
             {
                 Check = false;
                 int newRand = new Random().Next(10, 99 + 1);

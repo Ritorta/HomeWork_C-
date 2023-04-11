@@ -615,89 +615,141 @@
 //     }
 
 
+// // }
+// Console.Write("Enter quantity list: ");
+// int layer = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Enter quantity rows: ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Enter quantity colouns: ");
+// int colouns = Convert.ToInt32(Console.ReadLine());
+
+// if (layer == 0 || rows == 0 || colouns == 0)
+// {
+//     Console.WriteLine("Error!");
 // }
-Console.Write("Enter quantity list: ");
-int layer = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter quantity rows: ");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter quantity colouns: ");
-int colouns = Convert.ToInt32(Console.ReadLine());
+// else if (layer * rows * colouns < 99)
+// {
+//     int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
+//     ShowTripleArray3D(newArray);
+//     //CheakArray3D(newArray);
+//     //ShowTripleArray3D(newArray);
 
-if (layer == 0 || rows == 0 || colouns == 0)
-{
-    Console.WriteLine("Error!");
-}
-else if (layer <= 3 && rows <= 6 && colouns <= 5)
-{
-    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
-    ShowTripleArray3D(newArray);
-    //CheakArray3D(newArray);
-    //ShowTripleArray3D(newArray);
+// }
+// else
+// {
+//     Console.WriteLine("Error!");
+// }
 
-}
-else if (layer <= 3 && rows <= 5 && colouns <= 6)
-{
-    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
-    ShowTripleArray3D(newArray);
-    //CheakArray3D(newArray);
-    //ShowTripleArray3D(newArray);
-}
-else
-{
-    Console.WriteLine("Error!");
-}
+// int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
+// {
+//     int[,,] array = new int[layer, rows, colouns];
 
-int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
-{
-    int[,,] array = new int[layer, rows, colouns];
+//     for (int i = 0; i < layer; i++)
+//     {
+//         for (int j = 0; j < rows; j++)
+//         {
+//             for (int k = 0; k < colouns; )
+//             {
+//                 bool Check = false;
+//                 int newRand = new Random().Next(10, 99 + 1);
+//                 array[i, j, k] = newRand;
 
-    for (int i = 0; i < layer; i++)
+//                 for (int q = 0; k < i;)
+//                 {
+//                     if (array[i, j, k] == newRand)
+//                     {
+//                         Check = true;
+//                         break;
+//                     }
+//                 }
+
+//             if (!Check)
+//             {
+//                 array[i, j, k] = newRand;
+//                 k++;
+//             }
+//             }
+//         }
+//     }
+//     return array;
+// }
+
+
+// int[] CheeckArrayDuble(int[,,] array)
+// {
+//     int elementarray = 0;
+//     for(int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for(int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for(int k = 0; k < array.GetLength(2);)
+//             {
+//                 elementarray = array[i,j,k];
+
+//                 for(int q = k + 1; q < array.GetLength(0); q++)
+
+//                     while(array[i,j,k] == array[i,j,q])
+//                     {
+//                     if(elementarray == array[i,j,q])
+//                         {
+//                             array[i,j,k] = new Random().Next(10, 99 + 1);
+//                             k++;
+//                         }
+//                     }
+//             }
+//         }
+//     }
+// }
+
+// void ShowTripleArray3D(int[,,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         Console.WriteLine($"---Layer №: {(i + 1)}");
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < array.GetLength(2); k++)
+//             {
+//                 Console.Write(" " + array[i, j, k] + " ");
+//                 Console.Write($"({i},{j},{k})");
+//             }
+//             Console.WriteLine();
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+
+Console.Write("Enter the quantity number: ");
+double prise = Convert.ToInt32(Console.ReadLine());
+int nds = 20;
+
+double[] newSum = ImputNumber(count);
+double Sum = SumNumber(newSum);
+Console.Write(Sum);
+
+
+double[] ImputNumber(int prise)
+{
+double[] array = new double[prise];
+    for(int i = 0; i < prise; i++)
     {
-        for (int j = 0; j < rows; j++)
-        {
-            for (int k = 0; k < colouns; )
-            {
-                bool Check = false;
-                int newRand = new Random().Next(10, 99 + 1);
-                array[i, j, k] = newRand;
-
-                for (int q = 0; k < i;)
-                {
-                    if (array[i, j, k] == newRand)
-                    {
-                        Check = true;
-                        break;
-                    }
-                }
-
-            if (!Check)
-            {
-                array[i, j, k] = newRand;
-                k++;
-            }
-            }
-        }
+        Console.Write($"Enter the number {i + 1}: ");
+        array[i] = Convert.ToInt32(Console.ReadLine());
     }
     return array;
 }
 
-
-
-
-void ShowTripleArray3D(int[,,] array)
+double SumNumber(int[] array)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+double count = 0;
+    for(int i = 0; i < array.Length; i++)
     {
-        Console.WriteLine($"---Layer №: {(i + 1)}");
-        for (int j = 0; j < array.GetLength(1); j++)
+        if(array[i] > 0)
         {
-            for (int k = 0; k < array.GetLength(2); k++)
-            {
-                Console.Write(" " + array[i, j, k] + " ");
-                Console.Write($"({i},{j},{k})");
-            }
-            Console.WriteLine();
+            count = count + 1;            
         }
-        Console.WriteLine();
     }
-}
+return count;    
+}    
+
