@@ -75,8 +75,6 @@ int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
 }
 
 
-
-
 void ShowTripleArray3D(int[,,] array)
 {
     for(int i = 0; i < array.GetLength(0); i++)
