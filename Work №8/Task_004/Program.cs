@@ -61,7 +61,7 @@ int[,,] CreatTripleArray3D(int layer, int rows, int colouns) // Metod Create and
             for (int k = 0; k < colouns; k++) // Проходим по массиву Колонки.
             {
                 Check = false; // Булевая переменная изначально переведена в значение False
-                int newRand = new Random().Next(10, 99 + 1); // Генератор двухзначных рандомных чисел согласно заданию, кладём сгенерированное числов в переменную newRand.
+                int newRand = new Random().Next(10, 99 + 1); // Генератор двухзначных случайных чисел согласно заданию, кладём сгенерированное числов в переменную newRand.
                 array[i, j, k] = newRand; // Кладём сгенирированное число в массив.
 
                 for (int q = 0; q < k; q++) // Идём по массиву.
