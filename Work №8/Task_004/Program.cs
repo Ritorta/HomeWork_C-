@@ -11,26 +11,33 @@ Task №4:
 // ---Вариант №1---
 // Так вроде работает.
 
-Console.Write("Enter quantity list: ");
-int layer = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter quantity rows: ");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter quantity colouns: ");
-int colouns = Convert.ToInt32(Console.ReadLine());
 
-if(layer == 0 || rows == 0 || colouns == 0)
+// Начало, Задания переменных и условий. 
+
+// Задаём переменные.
+
+Console.Write("Enter quantity list: ");
+int layer = Convert.ToInt32(Console.ReadLine()); // Запрос количества Слоёв.
+Console.Write("Enter quantity rows: ");
+int rows = Convert.ToInt32(Console.ReadLine()); // Запрос количества Строк.
+Console.Write("Enter quantity colouns: ");
+int colouns = Convert.ToInt32(Console.ReadLine()); // Запрос количества Колонок.
+
+// Проверки на выполнение условий согласно задачи.
+
+if(layer == 0 || rows == 0 || colouns == 0) // Если пользователь ввёл нули в одно из значений или в все.
 {
     Console.WriteLine("Error!");
 }
-else if(layer <= 3 && rows <= 6 && colouns <= 5)
+else if(layer <= 3 && rows <= 6 && colouns <= 5) // Согласно заданию массив должен состоять только из двухзначных чисел.
 {
-    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
+    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns); // Вызов метода.
     ShowTripleArray3D(newArray);
         
 }
-else if(layer <= 3 && rows <= 5 && colouns <= 6)
+else if(layer <= 3 && rows <= 5 && colouns <= 6) // Согласно заданию массив должен состоять только из двухзначных чисел.
 {
-    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns);
+    int[,,] newArray = CreatTripleArray3D(layer, rows, colouns); // Вызов метода.
     ShowTripleArray3D(newArray);
     
 }
@@ -39,57 +46,59 @@ else
     Console.WriteLine("Error!");
 }
 
-int[,,] CreatTripleArray3D(int layer, int rows, int colouns)
+// Окончание, Задания переменных и условий, дальше идут методы.
+
+int[,,] CreatTripleArray3D(int layer, int rows, int colouns) // Metod Create and Sort Array, - В данном методе массив создаётся и идёт проверка значений на двойников. Метод с возвратом значения.
 {
-    int[,,] array = new int[layer, rows, colouns];
+    int[,,] array = new int[layer, rows, colouns]; // Выделяем память под массив.
 
-    bool Check;
+    bool Check; // Булевая переменная для поиска дубликатов.
 
-    for (int i = 0; i < layer; i++)
+    for (int i = 0; i < layer; i++) // Проходим по массиву Слои.
     {
-        for (int j = 0; j < rows; j++)
+        for (int j = 0; j < rows; j++) // Проходим по массиву Строки.
         {
-            for (int k = 0; k < colouns; k++)
+            for (int k = 0; k < colouns; k++) // Проходим по массиву Колонки.
             {
-                Check = false;
-                int newRand = new Random().Next(10, 99 + 1);
+                Check = false; // Булевая переменная изначально переведена в значение False
+                int newRand = new Random().Next(10, 99 + 1); // Генератор двухзначных рандомных чисел согласно заданию, кладём сгенерированное числов в переменную newRand.
                // array[i, j, k] = newRand;
 
-                for (int q = 0; q < k; q++)
+                for (int q = 0; q < k; q++) // Идём по массиву.
                 {
-                    if (array[i, j, q] == newRand)
+                    if (array[i, j, q] == newRand) // Сравниваем, если сгенерированное число в массиве.
                     {
-                        Check = true;
-                        break;
+                        Check = true; // Переводим в True.
+                        break; // Перываем запись числа которое уже есть в массиве.
                     }
                 }
-                if (!Check)
+                if (!Check) // Если сгенерированного числа нет в массиве, то кладём его в массив.
                 {
-                    array[i, j, k] = newRand;
-                    k++;
+                    array[i, j, k] = newRand; // Записываем числов  массив.
+                    k++; // Двигаемся дальше по массиву.
                 }
             }
         }
     }
-    return array;
+    return array; // Возвращаем метод.
 }
 
 
-void ShowTripleArray3D(int[,,] array)
+void ShowTripleArray3D(int[,,] array)   // Metod Show Array - Данный метод нужен для того, чтобы вывести массив. Метод без возврата значения.
 {
-    for(int i = 0; i < array.GetLength(0); i++)
+    for(int i = 0; i < array.GetLength(0); i++) // Проходим по массиву Слои.
     {
-        Console.WriteLine($"---Layer №: {(i + 1)}");
-        for(int j = 0 ; j < array.GetLength(1); j++)
+        Console.WriteLine($"---Layer №: {(i + 1)}"); // Выводи Слои.
+        for(int j = 0 ; j < array.GetLength(1); j++) // Проходим по массиву Строки.
         {
-            for(int k = 0; k < array.GetLength(2); k++)
+            for(int k = 0; k < array.GetLength(2); k++) // Проходим по массиву Колонки.
             {
-                Console.Write(" " + array[i,j,k] + " ");
-                Console.Write($"({i},{j},{k})");
+                Console.Write(" " + array[i,j,k] + " "); // Выводим Строки и Колонки.
+                Console.Write($"({i},{j},{k})"); // Согласно задания обрамляем в скобки и добавляем индексы для значений.
             }
-            Console.WriteLine();
+            Console.WriteLine(); // Для отступа и правильного вывода.
         }
-        Console.WriteLine();
+        Console.WriteLine(); // Для отступа и правильного вывода.
     }
 }
 
